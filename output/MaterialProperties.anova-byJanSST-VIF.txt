@@ -45,7 +45,7 @@ ContinentEastern NA1   slope_Mpa 1.375858   <NA>
 ContinentEurope1       slope_Mpa 1.246444   <NA>
 JanSST3                slope_Mpa 1.159512   <NA>
 intercept2             maxstress 0.647000       
-Continent2             maxstress 0.555000       
+Continent2             maxstress 0.554000       
 JanSST4                maxstress 0.515000       
 ContinentEastern NA2   maxstress 1.376537   <NA>
 ContinentEurope2       maxstress 1.246917   <NA>
