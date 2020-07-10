@@ -2,7 +2,7 @@
 
 
 ## data
-"architecture.csv"  
+### "architecture.csv"  
 Individual_ID = code for each individual  
 StacyLifehistory = morphological identification of reproductive tetrasporophytes vs vegetative  
 Reproductive = Y/N  
@@ -18,7 +18,16 @@ sumrtvol = sum of the volume (cm3)
 Volume = should the value be trusted (e.g., you got all the plant) Y/N  
 
 
-biomass.csv
-breakage.csv
-siteMeta.csv
+### "breakage.csv"  
+sample_id = code for each individual  
+Breakage_Point = where in the thallus did the break happen (base, mid, top)  
+attachment = was the individual attached in the field?  
+attach2 = a modification of "attachment" column  
+Life_History2 = morphological identification of reproductive tetrasporophytes vs vegetative  
+slope_Mpa = maximum slope of stress-strain curve  
+auc_modulus = area under the stress-strain curve  
+maxstrain = max strain  
+maxstress = max stress  
+peak_force = breakage force
 
+### "siteMeta.csv"  
