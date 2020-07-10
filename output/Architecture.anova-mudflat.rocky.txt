@@ -1,0 +1,489 @@
+[1] "sumlength"
+[1] "all thalli"
+            
+             rockyshore mudflat
+  Japan              33      67
+  Introduced         10      61
+lmer(formula = log(tmp[, y[i]]) ~ natnon * MudRock + (1 | site), 
+    data = tmp)
+                                  Estimate Std. Error       df    t value
+(Intercept)                      5.4089900  0.2952523 30.33863 18.3198890
+natnonIntroduced                 0.3748967  0.5104790 31.83189  0.7344017
+MudRockmudflat                   0.4410936  0.3714111 28.35298  1.1876158
+natnonIntroduced:MudRockmudflat -0.5939043  0.5851239 31.03226 -1.0150060
+                                    Pr(>|t|)
+(Intercept)                     5.893016e-18
+natnonIntroduced                4.680797e-01
+MudRockmudflat                  2.448391e-01
+natnonIntroduced:MudRockmudflat 3.179518e-01
+Type III Analysis of Variance Table with Satterthwaite's method
+                Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
+natnon         0.02504 0.02504     1 31.032  0.0710 0.7917
+MudRock        0.08563 0.08563     1 31.032  0.2427 0.6257
+natnon:MudRock 0.36343 0.36343     1 31.032  1.0302 0.3180
+[1] "reproductive tetrasporophytes only"
+            
+             rockyshore mudflat
+  Japan              20      36
+  Introduced         10      50
+lmer(formula = log(tmp[, y[i]]) ~ natnon * MudRock + (1 | site), 
+    data = tmp)
+                                  Estimate Std. Error       df    t value
+(Intercept)                      5.2721665  0.3888111 23.90081 13.5597121
+natnonIntroduced                 0.5121255  0.5957518 24.91948  0.8596290
+MudRockmudflat                   0.4315065  0.4818218 23.28989  0.8955726
+natnonIntroduced:MudRockmudflat -0.5397058  0.6888829 24.70139 -0.7834507
+                                    Pr(>|t|)
+(Intercept)                     1.021396e-12
+natnonIntroduced                3.981882e-01
+MudRockmudflat                  3.796443e-01
+natnonIntroduced:MudRockmudflat 4.408102e-01
+Type III Analysis of Variance Table with Satterthwaite's method
+                 Sum Sq  Mean Sq NumDF  DenDF F value Pr(>F)
+natnon         0.186494 0.186494     1 24.701  0.4947 0.4884
+MudRock        0.083029 0.083029     1 24.701  0.2203 0.6430
+natnon:MudRock 0.231372 0.231372     1 24.701  0.6138 0.4408
+[1] "sumprojarea"
+[1] "all thalli"
+            
+             rockyshore mudflat
+  Japan              55      77
+  Introduced         42     247
+lmer(formula = log(tmp[, y[i]]) ~ natnon * MudRock + (1 | site), 
+    data = tmp)
+                                    Estimate Std. Error       df     t value
+(Intercept)                      3.356016153  0.2726536 40.47582 12.30871886
+natnonIntroduced                 0.358611944  0.4289925 39.70225  0.83593991
+MudRockmudflat                  -0.040234287  0.3528964 40.86250 -0.11401160
+natnonIntroduced:MudRockmudflat -0.005479228  0.5019006 40.04309 -0.01091696
+                                    Pr(>|t|)
+(Intercept)                     2.899468e-15
+natnonIntroduced                4.081917e-01
+MudRockmudflat                  9.097869e-01
+natnonIntroduced:MudRockmudflat 9.913439e-01
+Type III Analysis of Variance Table with Satterthwaite's method
+                Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
+natnon         0.93686 0.93686     1 40.043  2.0110 0.1639
+MudRock        0.01366 0.01366     1 40.043  0.0293 0.8649
+natnon:MudRock 0.00006 0.00006     1 40.043  0.0001 0.9913
+[1] "reproductive tetrasporophytes only"
+            
+             rockyshore mudflat
+  Japan              32      41
+  Introduced         40     211
+lmer(formula = log(tmp[, y[i]]) ~ natnon * MudRock + (1 | site), 
+    data = tmp)
+                                  Estimate Std. Error       df    t value
+(Intercept)                      2.9555597  0.3459298 34.68930  8.5438126
+natnonIntroduced                 0.7265661  0.4853849 33.66021  1.4968867
+MudRockmudflat                   0.1782354  0.4373898 35.85423  0.4074977
+natnonIntroduced:MudRockmudflat -0.1709402  0.5724522 34.52387 -0.2986105
+                                    Pr(>|t|)
+(Intercept)                     4.728650e-10
+natnonIntroduced                1.437418e-01
+MudRockmudflat                  6.860654e-01
+natnonIntroduced:MudRockmudflat 7.670273e-01
+Type III Analysis of Variance Table with Satterthwaite's method
+                Sum Sq Mean Sq NumDF  DenDF F value  Pr(>F)  
+natnon         2.22244 2.22244     1 34.524  5.0168 0.03165 *
+MudRock        0.04653 0.04653     1 34.524  0.1050 0.74782  
+natnon:MudRock 0.03950 0.03950     1 34.524  0.0892 0.76703  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "sumavediam"
+[1] "all thalli"
+            
+             rockyshore mudflat
+  Japan              33      67
+  Introduced          8      58
+lmer(formula = log(tmp[, y[i]]) ~ natnon * MudRock + (1 | site), 
+    data = tmp)
+                                   Estimate Std. Error       df     t value
+(Intercept)                      0.27437692  0.2117257 25.85277  1.29590755
+natnonIntroduced                -0.06034264  0.3802057 32.98712 -0.15871052
+MudRockmudflat                   0.13367886  0.2641646 24.08296  0.50604376
+natnonIntroduced:MudRockmudflat -0.01104948  0.4324031 31.19206 -0.02555366
+                                 Pr(>|t|)
+(Intercept)                     0.2064582
+natnonIntroduced                0.8748646
+MudRockmudflat                  0.6174270
+natnonIntroduced:MudRockmudflat 0.9797761
+Type III Analysis of Variance Table with Satterthwaite's method
+                 Sum Sq  Mean Sq NumDF  DenDF F value Pr(>F)
+natnon         0.026800 0.026800     1 31.192  0.0928 0.7627
+MudRock        0.101451 0.101451     1 31.192  0.3514 0.5576
+natnon:MudRock 0.000189 0.000189     1 31.192  0.0007 0.9798
+[1] "reproductive tetrasporophytes only"
+            
+             rockyshore mudflat
+  Japan              20      36
+  Introduced          8      47
+lmer(formula = log(tmp[, y[i]]) ~ natnon * MudRock + (1 | site), 
+    data = tmp)
+                                   Estimate Std. Error       df     t value
+(Intercept)                      0.21980142  0.2937677 22.44554  0.74821498
+natnonIntroduced                -0.02403753  0.4585892 25.39324 -0.05241626
+MudRockmudflat                   0.18655282  0.3636853 21.89287  0.51295126
+natnonIntroduced:MudRockmudflat  0.01513279  0.5287025 24.86599  0.02862250
+                                 Pr(>|t|)
+(Intercept)                     0.4620990
+natnonIntroduced                0.9586072
+MudRockmudflat                  0.6131227
+natnonIntroduced:MudRockmudflat 0.9773942
+Type III Analysis of Variance Table with Satterthwaite's method
+                 Sum Sq  Mean Sq NumDF  DenDF F value Pr(>F)
+natnon         0.000977 0.000977     1 24.866  0.0039 0.9508
+MudRock        0.135643 0.135643     1 24.866  0.5392 0.4696
+natnon:MudRock 0.000206 0.000206     1 24.866  0.0008 0.9774
+[1] "sumrtvol"
+[1] "all thalli"
+            
+             rockyshore mudflat
+  Japan              32      68
+  Introduced         10      59
+lmer(formula = log(tmp[, y[i]]) ~ natnon * MudRock + (1 | site), 
+    data = tmp)
+                                  Estimate Std. Error       df    t value
+(Intercept)                      0.1996933  0.2823962 24.07870  0.7071389
+natnonIntroduced                 0.2822473  0.4773722 29.24642  0.5912520
+MudRockmudflat                   0.2980704  0.3461344 23.30102  0.8611408
+natnonIntroduced:MudRockmudflat -0.4066394  0.5439470 28.59089 -0.7475717
+                                 Pr(>|t|)
+(Intercept)                     0.4862682
+natnonIntroduced                0.5588941
+MudRockmudflat                  0.3979356
+natnonIntroduced:MudRockmudflat 0.4608234
+Type III Analysis of Variance Table with Satterthwaite's method
+                 Sum Sq  Mean Sq NumDF  DenDF F value Pr(>F)
+natnon         0.039750 0.039750     1 28.591  0.0842 0.7738
+MudRock        0.057286 0.057286     1 28.591  0.1214 0.7301
+natnon:MudRock 0.263780 0.263780     1 28.591  0.5589 0.4608
+[1] "reproductive tetrasporophytes only"
+            
+             rockyshore mudflat
+  Japan              19      36
+  Introduced         10      48
+lmer(formula = log(tmp[, y[i]]) ~ natnon * MudRock + (1 | site), 
+    data = tmp)
+                                   Estimate Std. Error       df    t value
+(Intercept)                     -0.06825482  0.3930893 18.61627 -0.1736370
+natnonIntroduced                 0.54661247  0.5773911 21.58002  0.9466937
+MudRockmudflat                   0.42371203  0.4729414 19.10334  0.8959081
+natnonIntroduced:MudRockmudflat -0.44556176  0.6620257 21.86548 -0.6730279
+                                 Pr(>|t|)
+(Intercept)                     0.8640249
+natnonIntroduced                0.3542759
+MudRockmudflat                  0.3814527
+natnonIntroduced:MudRockmudflat 0.5079811
+Type III Analysis of Variance Table with Satterthwaite's method
+                Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
+natnon         0.43340 0.43340     1 21.866  0.9571 0.3386
+MudRock        0.16686 0.16686     1 21.866  0.3685 0.5501
+natnon:MudRock 0.20512 0.20512     1 21.866  0.4530 0.5080
+[1] "ANCOVA- sumlength sumprojarea"
+[1] "all data"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                     Sum Sq Mean Sq NumDF  DenDF   F value
+log(tmp[, TwoVars[2, j]])            45.469  45.469     1 162.48 3084.4005
+tmp$natnon                            0.006   0.006     1 134.92    0.3754
+log(tmp[, TwoVars[2, j]]):tmp$natnon  0.007   0.007     1 162.48    0.4662
+                                     Pr(>F)    
+log(tmp[, TwoVars[2, j]])            <2e-16 ***
+tmp$natnon                           0.5411    
+log(tmp[, TwoVars[2, j]]):tmp$natnon 0.4957    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "only reproductive tetrasporophytes"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                       Sum Sq Mean Sq NumDF   DenDF   F value
+log(tmp2[, TwoVars[2, j]])             34.861  34.861     1 105.371 2824.4694
+tmp2$natnon                             0.006   0.006     1  98.814    0.4484
+log(tmp2[, TwoVars[2, j]]):tmp2$natnon  0.009   0.009     1 105.371    0.7605
+                                       Pr(>F)    
+log(tmp2[, TwoVars[2, j]])             <2e-16 ***
+tmp2$natnon                            0.5047    
+log(tmp2[, TwoVars[2, j]]):tmp2$natnon 0.3851    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "ANCOVA- sumprojarea sumlength"
+[1] "all data"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                     Sum Sq Mean Sq NumDF  DenDF   F value
+log(tmp[, TwoVars[1, j]])            50.239  50.239     1 166.60 3054.2188
+tmp$natnon                            0.000   0.000     1 163.59    0.0031
+log(tmp[, TwoVars[1, j]]):tmp$natnon  0.000   0.000     1 166.60    0.0102
+                                     Pr(>F)    
+log(tmp[, TwoVars[1, j]])            <2e-16 ***
+tmp$natnon                           0.9560    
+log(tmp[, TwoVars[1, j]]):tmp$natnon 0.9198    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "only reproductive tetrasporophytes"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                       Sum Sq Mean Sq NumDF  DenDF   F value
+log(tmp2[, TwoVars[1, j]])             36.152  36.152     1 108.50 2779.4913
+tmp2$natnon                             0.000   0.000     1 111.88    0.0148
+log(tmp2[, TwoVars[1, j]]):tmp2$natnon  0.000   0.000     1 108.50    0.0364
+                                       Pr(>F)    
+log(tmp2[, TwoVars[1, j]])             <2e-16 ***
+tmp2$natnon                            0.9033    
+log(tmp2[, TwoVars[1, j]]):tmp2$natnon 0.8490    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "ANCOVA- sumlength sumavediam"
+[1] "all data"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                     Sum Sq Mean Sq NumDF   DenDF  F value
+log(tmp[, TwoVars[2, j]])            32.130  32.130     1 151.278 244.4791
+tmp$natnon                            0.085   0.085     1  34.392   0.6474
+log(tmp[, TwoVars[2, j]]):tmp$natnon  0.833   0.833     1 151.278   6.3355
+                                      Pr(>F)    
+log(tmp[, TwoVars[2, j]])            < 2e-16 ***
+tmp$natnon                           0.42658    
+log(tmp[, TwoVars[2, j]]):tmp$natnon 0.01288 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "only reproductive tetrasporophytes"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                        Sum Sq Mean Sq NumDF   DenDF  F value
+log(tmp2[, TwoVars[2, j]])             24.1695 24.1695     1 101.131 160.3720
+tmp2$natnon                             0.2867  0.2867     1  29.241   1.9024
+log(tmp2[, TwoVars[2, j]]):tmp2$natnon  0.4387  0.4387     1 101.131   2.9109
+                                        Pr(>F)    
+log(tmp2[, TwoVars[2, j]])             < 2e-16 ***
+tmp2$natnon                            0.17826    
+log(tmp2[, TwoVars[2, j]]):tmp2$natnon 0.09105 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "ANCOVA- sumavediam sumlength"
+[1] "all data"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                      Sum Sq Mean Sq NumDF  DenDF  F value
+log(tmp[, TwoVars[1, j]])            25.3868 25.3868     1 155.01 232.5922
+tmp$natnon                            0.3763  0.3763     1 148.06   3.4479
+log(tmp[, TwoVars[1, j]]):tmp$natnon  0.3464  0.3464     1 155.01   3.1741
+                                      Pr(>F)    
+log(tmp[, TwoVars[1, j]])            < 2e-16 ***
+tmp$natnon                           0.06532 .  
+log(tmp[, TwoVars[1, j]]):tmp$natnon 0.07677 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "only reproductive tetrasporophytes"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                        Sum Sq Mean Sq NumDF  DenDF  F value
+log(tmp2[, TwoVars[1, j]])             15.8978 15.8978     1 104.61 160.4519
+tmp2$natnon                             0.4004  0.4004     1 101.63   4.0411
+log(tmp2[, TwoVars[1, j]]):tmp2$natnon  0.3455  0.3455     1 104.61   3.4866
+                                        Pr(>F)    
+log(tmp2[, TwoVars[1, j]])             < 2e-16 ***
+tmp2$natnon                            0.04705 *  
+log(tmp2[, TwoVars[1, j]]):tmp2$natnon 0.06467 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "ANCOVA- sumlength sumrtvol"
+[1] "all data"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                     Sum Sq Mean Sq NumDF   DenDF  F value
+log(tmp[, TwoVars[2, j]])            39.264  39.264     1 153.703 778.7316
+tmp$natnon                            0.001   0.001     1  34.322   0.0137
+log(tmp[, TwoVars[2, j]]):tmp$natnon  0.056   0.056     1 153.703   1.1159
+                                     Pr(>F)    
+log(tmp[, TwoVars[2, j]])            <2e-16 ***
+tmp$natnon                           0.9073    
+log(tmp[, TwoVars[2, j]]):tmp$natnon 0.2925    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "only reproductive tetrasporophytes"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                        Sum Sq Mean Sq NumDF  DenDF  F value
+log(tmp2[, TwoVars[2, j]])             30.9916 30.9916     1 98.866 678.9025
+tmp2$natnon                             0.0000  0.0000     1 28.404   0.0006
+log(tmp2[, TwoVars[2, j]]):tmp2$natnon  0.0555  0.0555     1 98.866   1.2162
+                                       Pr(>F)    
+log(tmp2[, TwoVars[2, j]])             <2e-16 ***
+tmp2$natnon                            0.9805    
+log(tmp2[, TwoVars[2, j]]):tmp2$natnon 0.2728    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "ANCOVA- sumrtvol sumlength"
+[1] "all data"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                     Sum Sq Mean Sq NumDF  DenDF  F value
+log(tmp[, TwoVars[1, j]])            51.296  51.296     1 161.95 758.7594
+tmp$natnon                            0.004   0.004     1 157.66   0.0604
+log(tmp[, TwoVars[1, j]]):tmp$natnon  0.005   0.005     1 161.95   0.0708
+                                     Pr(>F)    
+log(tmp[, TwoVars[1, j]])            <2e-16 ***
+tmp$natnon                           0.8062    
+log(tmp[, TwoVars[1, j]]):tmp$natnon 0.7904    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "only reproductive tetrasporophytes"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                       Sum Sq Mean Sq NumDF  DenDF  F value
+log(tmp2[, TwoVars[1, j]])             35.624  35.624     1 104.98 656.2634
+tmp2$natnon                             0.001   0.001     1 106.64   0.0124
+log(tmp2[, TwoVars[1, j]]):tmp2$natnon  0.000   0.000     1 104.98   0.0002
+                                       Pr(>F)    
+log(tmp2[, TwoVars[1, j]])             <2e-16 ***
+tmp2$natnon                            0.9115    
+log(tmp2[, TwoVars[1, j]]):tmp2$natnon 0.9876    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "ANCOVA- sumprojarea sumavediam"
+[1] "all data"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                     Sum Sq Mean Sq NumDF   DenDF  F value
+log(tmp[, TwoVars[2, j]])            39.629  39.629     1 157.393 326.4020
+tmp$natnon                            0.085   0.085     1  33.996   0.6973
+log(tmp[, TwoVars[2, j]]):tmp$natnon  0.765   0.765     1 157.393   6.3005
+                                      Pr(>F)    
+log(tmp[, TwoVars[2, j]])            < 2e-16 ***
+tmp$natnon                           0.40954    
+log(tmp[, TwoVars[2, j]]):tmp$natnon 0.01308 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "only reproductive tetrasporophytes"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                        Sum Sq Mean Sq NumDF   DenDF  F value
+log(tmp2[, TwoVars[2, j]])             27.1091 27.1091     1 104.865 205.6165
+tmp2$natnon                             0.2899  0.2899     1  28.689   2.1985
+log(tmp2[, TwoVars[2, j]]):tmp2$natnon  0.3991  0.3991     1 104.865   3.0267
+                                        Pr(>F)    
+log(tmp2[, TwoVars[2, j]])             < 2e-16 ***
+tmp2$natnon                            0.14905    
+log(tmp2[, TwoVars[2, j]]):tmp2$natnon 0.08484 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "ANCOVA- sumavediam sumprojarea"
+[1] "all data"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                     Sum Sq Mean Sq NumDF  DenDF  F value
+log(tmp[, TwoVars[1, j]])            29.032  29.032     1 160.57 322.8499
+tmp$natnon                            0.482   0.482     1 136.08   5.3602
+log(tmp[, TwoVars[1, j]]):tmp$natnon  0.503   0.503     1 160.57   5.5931
+                                      Pr(>F)    
+log(tmp[, TwoVars[1, j]])            < 2e-16 ***
+tmp$natnon                           0.02210 *  
+log(tmp[, TwoVars[1, j]]):tmp$natnon 0.01923 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "only reproductive tetrasporophytes"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                        Sum Sq Mean Sq NumDF   DenDF  F value
+log(tmp2[, TwoVars[1, j]])             17.3838 17.3838     1 106.904 210.1215
+tmp2$natnon                             0.4131  0.4131     1  96.045   4.9929
+log(tmp2[, TwoVars[1, j]]):tmp2$natnon  0.3684  0.3684     1 106.904   4.4529
+                                        Pr(>F)    
+log(tmp2[, TwoVars[1, j]])             < 2e-16 ***
+tmp2$natnon                            0.02777 *  
+log(tmp2[, TwoVars[1, j]]):tmp2$natnon 0.03718 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "ANCOVA- sumprojarea sumrtvol"
+[1] "all data"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                     Sum Sq Mean Sq NumDF   DenDF   F value
+log(tmp[, TwoVars[2, j]])            50.224  50.224     1 157.317 3675.4700
+tmp$natnon                            0.000   0.000     1  34.396    0.0225
+log(tmp[, TwoVars[2, j]]):tmp$natnon  0.019   0.019     1 157.317    1.4224
+                                     Pr(>F)    
+log(tmp[, TwoVars[2, j]])            <2e-16 ***
+tmp$natnon                           0.8816    
+log(tmp[, TwoVars[2, j]]):tmp$natnon 0.2348    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "only reproductive tetrasporophytes"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                       Sum Sq Mean Sq NumDF   DenDF   F value
+log(tmp2[, TwoVars[2, j]])             36.551  36.551     1 101.942 2794.6908
+tmp2$natnon                             0.000   0.000     1  28.297    0.0001
+log(tmp2[, TwoVars[2, j]]):tmp2$natnon  0.020   0.020     1 101.942    1.5097
+                                       Pr(>F)    
+log(tmp2[, TwoVars[2, j]])             <2e-16 ***
+tmp2$natnon                             0.991    
+log(tmp2[, TwoVars[2, j]]):tmp2$natnon  0.222    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "ANCOVA- sumrtvol sumprojarea"
+[1] "all data"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                     Sum Sq Mean Sq NumDF  DenDF   F value
+log(tmp[, TwoVars[1, j]])            60.295  60.295     1 162.47 3620.7165
+tmp$natnon                            0.004   0.004     1 135.71    0.2235
+log(tmp[, TwoVars[1, j]]):tmp$natnon  0.005   0.005     1 162.47    0.3271
+                                     Pr(>F)    
+log(tmp[, TwoVars[1, j]])            <2e-16 ***
+tmp$natnon                           0.6372    
+log(tmp[, TwoVars[1, j]]):tmp$natnon 0.5682    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "only reproductive tetrasporophytes"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                       Sum Sq Mean Sq NumDF   DenDF   F value
+log(tmp2[, TwoVars[1, j]])             41.461  41.461     1 105.655 2737.6315
+tmp2$natnon                             0.003   0.003     1  97.623    0.1724
+log(tmp2[, TwoVars[1, j]]):tmp2$natnon  0.007   0.007     1 105.655    0.4569
+                                       Pr(>F)    
+log(tmp2[, TwoVars[1, j]])             <2e-16 ***
+tmp2$natnon                            0.6789    
+log(tmp2[, TwoVars[1, j]]):tmp2$natnon 0.5005    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "ANCOVA- sumavediam sumrtvol"
+[1] "all data"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                      Sum Sq Mean Sq NumDF   DenDF  F value
+log(tmp[, TwoVars[2, j]])            30.1286 30.1286     1 160.676 352.7110
+tmp$natnon                            0.1204  0.1204     1  28.657   1.4091
+log(tmp[, TwoVars[2, j]]):tmp$natnon  0.4703  0.4703     1 160.676   5.5056
+                                      Pr(>F)    
+log(tmp[, TwoVars[2, j]])            < 2e-16 ***
+tmp$natnon                           0.24495    
+log(tmp[, TwoVars[2, j]]):tmp$natnon 0.02018 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "only reproductive tetrasporophytes"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                        Sum Sq Mean Sq NumDF   DenDF  F value
+log(tmp2[, TwoVars[2, j]])             17.7506 17.7506     1 105.152 238.9173
+tmp2$natnon                             0.1890  0.1890     1  24.616   2.5444
+log(tmp2[, TwoVars[2, j]]):tmp2$natnon  0.2745  0.2745     1 105.152   3.6946
+                                       Pr(>F)    
+log(tmp2[, TwoVars[2, j]])             <2e-16 ***
+tmp2$natnon                            0.1234    
+log(tmp2[, TwoVars[2, j]]):tmp2$natnon 0.0573 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "ANCOVA- sumrtvol sumavediam"
+[1] "all data"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                     Sum Sq Mean Sq NumDF   DenDF  F value
+log(tmp[, TwoVars[1, j]])            49.153  49.153     1 159.139 356.6716
+tmp$natnon                            0.187   0.187     1  31.649   1.3587
+log(tmp[, TwoVars[1, j]]):tmp$natnon  0.941   0.941     1 159.139   6.8279
+                                        Pr(>F)    
+log(tmp[, TwoVars[1, j]])            < 2.2e-16 ***
+tmp$natnon                            0.252481    
+log(tmp[, TwoVars[1, j]]):tmp$natnon  0.009835 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "only reproductive tetrasporophytes"
+Type III Analysis of Variance Table with Satterthwaite's method
+                                        Sum Sq Mean Sq NumDF   DenDF  F value
+log(tmp2[, TwoVars[1, j]])             31.3503 31.3503     1 104.173 239.9713
+tmp2$natnon                             0.5734  0.5734     1  27.327   4.3890
+log(tmp2[, TwoVars[1, j]]):tmp2$natnon  0.6245  0.6245     1 104.173   4.7801
+                                        Pr(>F)    
+log(tmp2[, TwoVars[1, j]])             < 2e-16 ***
+tmp2$natnon                            0.04557 *  
+log(tmp2[, TwoVars[1, j]]):tmp2$natnon 0.03103 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+            var1        var2   n     r p
+cor    sumlength sumprojarea 171 0.951 0
+cor1   sumlength  sumavediam 164 0.792 0
+cor2   sumlength    sumrtvol 166 0.827 0
+cor3 sumprojarea  sumavediam 166 0.861 0
+cor4 sumprojarea    sumrtvol 169 0.954 0
+cor5  sumavediam    sumrtvol 165 0.854 0

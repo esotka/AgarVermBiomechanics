@@ -1,0 +1,64 @@
+[1] "######### all thalli #########"
+                            data        p signif
+intercept             peak_force 0.000000      *
+Continent             peak_force 0.002000      *
+lat                   peak_force 0.000000      *
+ContinentEastern NA   peak_force 1.209835   <NA>
+ContinentEurope       peak_force 2.456079   <NA>
+lat1                  peak_force 2.207881   <NA>
+intercept1             slope_Mpa 0.000000      *
+Continent1             slope_Mpa 0.000000      *
+lat2                   slope_Mpa 0.000000      *
+ContinentEastern NA1   slope_Mpa 1.210289   <NA>
+ContinentEurope1       slope_Mpa 2.459345   <NA>
+lat3                   slope_Mpa 2.211593   <NA>
+intercept2             maxstress 0.193000       
+Continent2             maxstress 0.382000       
+lat4                   maxstress 0.207000       
+ContinentEastern NA2   maxstress 1.210124   <NA>
+ContinentEurope2       maxstress 2.458144   <NA>
+lat5                   maxstress 2.210223   <NA>
+intercept3             maxstrain 0.000000      *
+Continent3             maxstrain 0.027000      *
+lat6                   maxstrain 0.028000      *
+ContinentEastern NA3   maxstrain 1.208555   <NA>
+ContinentEurope3       maxstrain 2.447586   <NA>
+lat7                   maxstrain 2.198389   <NA>
+intercept4           auc_modulus 0.008000      *
+Continent4           auc_modulus 0.754000       
+lat8                 auc_modulus 0.727000       
+ContinentEastern NA4 auc_modulus 1.209491   <NA>
+ContinentEurope4     auc_modulus 2.453702   <NA>
+lat9                 auc_modulus 2.205202   <NA>
+[1] "######### tetrasporophytes only #########"
+                            data        p signif
+intercept             peak_force 0.000000      *
+Continent             peak_force 0.001000      *
+lat                   peak_force 0.000000      *
+ContinentEastern NA   peak_force 1.204980   <NA>
+ContinentEurope       peak_force 2.536220   <NA>
+lat1                  peak_force 2.247070   <NA>
+intercept1             slope_Mpa 0.000000      *
+Continent1             slope_Mpa 0.000000      *
+lat2                   slope_Mpa 0.004000      *
+ContinentEastern NA1   slope_Mpa 1.206180   <NA>
+ContinentEurope1       slope_Mpa 2.527479   <NA>
+lat3                   slope_Mpa 2.237864   <NA>
+intercept2             maxstress 0.557000       
+Continent2             maxstress 0.507000       
+lat4                   maxstress 0.575000       
+ContinentEastern NA2   maxstress 1.206312   <NA>
+ContinentEurope2       maxstress 2.526403   <NA>
+lat5                   maxstress 2.236777   <NA>
+intercept3             maxstrain 0.000000      *
+Continent3             maxstrain 0.016000      *
+lat6                   maxstrain 0.012000      *
+ContinentEastern NA3   maxstrain 1.208462   <NA>
+ContinentEurope3       maxstrain 2.501323   <NA>
+lat7                   maxstrain 2.214428   <NA>
+intercept4           auc_modulus 0.003000      *
+Continent4           auc_modulus 0.578000       
+lat8                 auc_modulus 0.417000       
+ContinentEastern NA4 auc_modulus 1.207366   <NA>
+ContinentEurope4     auc_modulus 2.516642   <NA>
+lat9                 auc_modulus 2.227387   <NA>

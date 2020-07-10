@@ -1,0 +1,19 @@
+Call:corr.test(x = tmp)
+Correlation matrix 
+            slope_Mpa auc_modulus maxstrain maxstress peak_force
+slope_Mpa        1.00        0.25     -0.20      0.61       0.06
+auc_modulus      0.25        1.00      0.86      0.91       0.67
+maxstrain       -0.20        0.86      1.00      0.60       0.64
+maxstress        0.61        0.91      0.60      1.00       0.56
+peak_force       0.06        0.67      0.64      0.56       1.00
+Sample Size 
+[1] 704
+Probability values (Entries above the diagonal are adjusted for multiple tests.) 
+            slope_Mpa auc_modulus maxstrain maxstress peak_force
+slope_Mpa        0.00           0         0         0       0.09
+auc_modulus      0.00           0         0         0       0.00
+maxstrain        0.00           0         0         0       0.00
+maxstress        0.00           0         0         0       0.00
+peak_force       0.09           0         0         0       0.00
+
+ To see confidence intervals of the correlations, print with the short=FALSE option
