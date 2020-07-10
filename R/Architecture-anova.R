@@ -82,4 +82,4 @@ for (j in 1:dim(TwoVars)[2])
 print(out)
 sink()
 
-dev.off()
+#dev.off()
