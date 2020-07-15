@@ -45,10 +45,10 @@ archtmp2 <- cast(archtmp,site+natnon+Continent.short~variable,mean,na.rm=T)
 brtmp <- tapply(br$peak_force,br$site,mean,na.rm=T)
 all <- data.frame(archtmp2)
 all$peak_force <- brtmp[match(all$site,names(brtmp))]
+all <- all[complete.cases(all),]
 library(lattice)
 pdf('output/MaterialProperties~size.pdf')
 print(xyplot(peak_force~sumprojarea | natnon,data=all,type=c("r","p")))
 print(xyplot(peak_force~sumprojarea,data=all,type=c("r","p")))
 dev.off()
-m <- lm(peak_force~sumprojarea*natnon,data=all); anova(m)
-m <- lm(peak_force~sumprojarea,data=all); anova(m)
+print(cor.test(all$peak_force,all$sumprojarea))
