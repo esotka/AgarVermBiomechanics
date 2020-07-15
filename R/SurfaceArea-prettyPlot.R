@@ -6,7 +6,7 @@ library(reshape)
 library(gridExtra)
 ### site Metadata
 meta <- read.csv('data/siteMeta.csv')
-tmp <- data.frame(long=levels(meta$Continent),short=c("Japan","wNA","eNA","Europe"))
+tmp <- data.frame(long=levels(meta$Continent)[c(2,4,3,1)],short=c("Japan","wNA","eNA","Europe"))
 
 ########################
 ### architecture data ###

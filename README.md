@@ -31,3 +31,22 @@ maxstress = max stress
 peak_force = breakage force
 
 ### "siteMeta.csv"  
+NatNon = Japan vs Introduced region
+Continent, subregion, Population = desciption of regions
+field_site_code_2015, site_code_for_ms = codes
+lat = latitude
+long = longitude
+salinityppt = salinity at time of collection
+JanSST = from BioOracle (Tyberghein et al., 2012)
+JulySST = from BioOracle (Tyberghein et al., 2012)
+GenotypicRichness = from microsatellites of Krueger-Hadfield et al. 2017
+propdip = from microsatellites of Krueger-Hadfield et al. 2017
+purediploid = from microsatellites of Krueger-Hadfield et al. 2017
+clonality = from microsatellites of Krueger-Hadfield et al. 2017
+SiteA = habitat types (mudflat rockyshore)
+SiteB = habitat types (mudflat mudflatmix rockyshore)
+propattach = proportion of collected thalli that were attached
+propdrift = proportion of collected thalli that were drifting
+Collection.date = collection date
+Collection.waterTemp = collection water temperature
+
