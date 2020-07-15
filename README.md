@@ -1,5 +1,7 @@
 # AgarVermBiomechanics
+## description  
 
+This dataset contains biomechanical and body size information for 2015-16 collections of Agarophyton vermiculophyllum (formerly Gracilaria vermilculophylla). Citation Murren et al. (in prep)
 
 ## data
 ### "architecture.csv"  
@@ -16,7 +18,6 @@ sumavediam = sum of the diameters (cm)
 Diameter = should the value be trusted (e.g., you got all the plant) Y/N  
 sumrtvol = sum of the volume (cm3)  
 Volume = should the value be trusted (e.g., you got all the plant) Y/N  
-
 
 ### "breakage.csv"  
 sample_id = code for each individual  
