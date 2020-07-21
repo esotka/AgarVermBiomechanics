@@ -1,5 +1,6 @@
 ### does population-level size correlate with peak breakage force?
-
+rm(list=ls())
+library(reshape)
 ### site Metadata
 meta <- read.csv('data/siteMeta.csv')
 tmp <- data.frame(long=levels(meta$Continent)[c(2,4,3,1)],short=c("Japan","wNA","eNA","Europe"))
@@ -37,18 +38,78 @@ arch$JanSST <- meta$JanSST[match(arch$site,meta$field_site_code_2015)]
 
 ### all breakage sites are in the architecture sites (41). 3 architecture sites are NOT in the breakage sites ("dkm" "ehs" "tom")
 ### all thalli
-
 archtmp <- arch[arch$Surfacearea=="Y",]
 archtmp <- melt(archtmp[,c("site","natnon","Continent.short","sumprojarea")])
+archtmp$value <- log(archtmp$value)
 archtmp2 <- cast(archtmp,site+natnon+Continent.short~variable,mean,na.rm=T)
-
-brtmp <- tapply(br$peak_force,br$site,mean,na.rm=T)
 all <- data.frame(archtmp2)
-all$peak_force <- brtmp[match(all$site,names(brtmp))]
+
+#### log of material properties ###
+y <- c("peak_force","maxstress","maxstrain","auc_modulus","slope_Mpa")
+corr.out <- c()
+for (i in 1:5)
+{
+  brtmp <- tapply(log(br[,colnames(br)==y[i]]),br$site,mean,na.rm=T)
+  all[,ncol(all)+1] <- brtmp[match(all$site,names(brtmp))]
+  ### corr tests
+  tmp <- data.frame(all[,ncol(all)],all$sumprojarea,natnon=all$natnon)
+  tmp <- tmp[complete.cases(tmp),]
+  p = cor.test(tmp[,1],tmp[,2])$p.value
+  cor.est = cor.test(tmp[,1],tmp[,2])$estimate
+  ### corr tests native only
+  p.nat = cor.test(tmp[tmp$natnon=="Japan",1],tmp[tmp$natnon=="Japan",2])$p.value
+  cor.est.nat = cor.test(tmp[tmp$natnon=="Japan",1],tmp[tmp$natnon=="Japan",2])$estimate
+  
+  ### corr tests non-native only
+  p.non = cor.test(tmp[tmp$natnon=="Introduced",1],tmp[tmp$natnon=="Introduced",2])$p.value
+  cor.est.non = cor.test(tmp[tmp$natnon=="Introduced",1],tmp[tmp$natnon=="Introduced",2])$estimate
+  
+  corr.out <- rbind(corr.out,data.frame(x="sumprojarea",y=y[i],p,cor.est,p.nat,cor.est.nat,p.non,cor.est.non))
+}
+colnames(all)[5:9] <- y
 all <- all[complete.cases(all),]
-library(lattice)
 pdf('output/MaterialProperties~size.pdf')
-print(xyplot(peak_force~sumprojarea | natnon,data=all,type=c("r","p")))
-print(xyplot(peak_force~sumprojarea,data=all,type=c("r","p")))
+library(car)
+print(scatterplotMatrix(~sumprojarea + peak_force + maxstress + maxstrain + auc_modulus + slope_Mpa ,data=all,main="all thalli"))
+print(scatterplotMatrix(~sumprojarea + peak_force + maxstress + maxstrain + auc_modulus + slope_Mpa | natnon,data=all,main="all thalli"))
+
+
+
+### tetrasporophytes only
+
+archtmp <- arch[arch$Surfacearea=="Y" & arch$StacyLifehistory=="Tetrasporophyte",]
+archtmp <- melt(archtmp[,c("site","natnon","Continent.short","sumprojarea")])
+archtmp$value <- log(archtmp$value)
+archtmp2 <- cast(archtmp,site+natnon+Continent.short~variable,mean,na.rm=T)
+all <- data.frame(archtmp2)
+
+#### log of material properties ###
+y <- c("peak_force","maxstress","maxstrain","auc_modulus","slope_Mpa")
+for (i in 1:5)
+{
+  brtmp <- tapply(log(br[,colnames(br)==y[i]]),br$site,mean,na.rm=T)
+  all[,ncol(all)+1] <- brtmp[match(all$site,names(brtmp))]
+  ### corr tests
+  tmp <- data.frame(all[,ncol(all)],all$sumprojarea,natnon=all$natnon)
+  tmp <- tmp[complete.cases(tmp),]
+  p = cor.test(tmp[,1],tmp[,2])$p.value
+  cor.est = cor.test(tmp[,1],tmp[,2])$estimate
+  ### corr tests native only
+  p.nat = cor.test(tmp[tmp$natnon=="Japan",1],tmp[tmp$natnon=="Japan",2])$p.value
+  cor.est.nat = cor.test(tmp[tmp$natnon=="Japan",1],tmp[tmp$natnon=="Japan",2])$estimate
+  
+  ### corr tests non-native only
+  p.non = cor.test(tmp[tmp$natnon=="Introduced",1],tmp[tmp$natnon=="Introduced",2])$p.value
+  cor.est.non = cor.test(tmp[tmp$natnon=="Introduced",1],tmp[tmp$natnon=="Introduced",2])$estimate
+  
+  corr.out <- rbind(corr.out,data.frame(x="sumprojarea",y=y[i],p,cor.est,p.nat,cor.est.nat,p.non,cor.est.non))
+}
+colnames(all)[5:9] <- y
+all <- all[complete.cases(all),]
+
+print(scatterplotMatrix(~sumprojarea + peak_force + maxstress + maxstrain + auc_modulus + slope_Mpa ,data=all,main="tetrasporophyte thalli"))
+print(scatterplotMatrix(~sumprojarea + peak_force + maxstress + maxstrain + auc_modulus + slope_Mpa | natnon,data=all,main="tetrasporophyte thalli"))
+
 dev.off()
-print(cor.test(all$peak_force,all$sumprojarea))
+
+write.csv(corr.out,'output/MaterialProperties~size.correlations.csv')
