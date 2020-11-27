@@ -1,0 +1,128 @@
+[1] "sumlength"
+[1] "all thalli"
+            
+             attach drift
+  Japan          85    15
+  Introduced     11    51
+lmer(formula = log(tmp[, y[i]]) ~ natnon + attachment.status2 + 
+    (1 | site), data = tmp)
+                          Estimate Std. Error        df    t value     Pr(>|t|)
+(Intercept)              5.7010615  0.1733309  26.89032 32.8912107 2.958572e-23
+natnonIntroduced         0.1869633  0.2782067  41.29395  0.6720303 5.053073e-01
+attachment.status2drift -0.1045221  0.2096902 137.60246 -0.4984598 6.189558e-01
+Type III Analysis of Variance Table with Satterthwaite's method
+                    Sum Sq Mean Sq NumDF   DenDF F value Pr(>F)
+natnon             0.16454 0.16454     1  41.294  0.4516 0.5053
+attachment.status2 0.09052 0.09052     1 137.602  0.2485 0.6190
+[1] "reproductive tetrasporophytes only"
+            
+             attach drift
+  Japan          49     7
+  Introduced     11    41
+lmer(formula = log(tmp[, y[i]]) ~ natnon + attachment.status2 + 
+    (1 | site), data = tmp)
+                          Estimate Std. Error       df   t value     Pr(>|t|)
+(Intercept)              5.5836315  0.2243169 21.64274 24.891713 2.042604e-17
+natnonIntroduced         0.4289339  0.3479813 31.19034  1.232635 2.269226e-01
+attachment.status2drift -0.2461615  0.2927782 70.36002 -0.840778 4.033206e-01
+Type III Analysis of Variance Table with Satterthwaite's method
+                    Sum Sq Mean Sq NumDF DenDF F value Pr(>F)
+natnon             0.59287 0.59287     1 31.19  1.5194 0.2269
+attachment.status2 0.27584 0.27584     1 70.36  0.7069 0.4033
+[1] "sumprojarea"
+[1] "all thalli"
+            
+             attach drift
+  Japan         114    18
+  Introduced     50   184
+lmer(formula = log(tmp[, y[i]]) ~ natnon + attachment.status2 + 
+    (1 | site), data = tmp)
+                          Estimate Std. Error        df   t value     Pr(>|t|)
+(Intercept)              3.3521318  0.1645057  37.71038 20.376991 5.931699e-22
+natnonIntroduced         0.4893566  0.2309787  49.66774  2.118623 3.914734e-02
+attachment.status2drift -0.1576498  0.1520870 299.14977 -1.036577 3.007702e-01
+Type III Analysis of Variance Table with Satterthwaite's method
+                    Sum Sq Mean Sq NumDF   DenDF F value  Pr(>F)  
+natnon             2.11981 2.11981     1  49.668  4.4886 0.03915 *
+attachment.status2 0.50745 0.50745     1 299.150  1.0745 0.30077  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "reproductive tetrasporophytes only"
+            
+             attach drift
+  Japan          65     8
+  Introduced     48   168
+lmer(formula = log(tmp[, y[i]]) ~ natnon + attachment.status2 + 
+    (1 | site), data = tmp)
+                           Estimate Std. Error        df    t value     Pr(>|t|)
+(Intercept)              3.08120726  0.1947653  34.87150 15.8201023 1.747639e-17
+natnonIntroduced         0.72293459  0.2572346  44.06301  2.8104094 7.354408e-03
+attachment.status2drift -0.09126613  0.1691447 217.78334 -0.5395741 5.900420e-01
+Type III Analysis of Variance Table with Satterthwaite's method
+                   Sum Sq Mean Sq NumDF   DenDF F value   Pr(>F)   
+natnon             3.5629  3.5629     1  44.063  7.8984 0.007354 **
+attachment.status2 0.1313  0.1313     1 217.783  0.2911 0.590042   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+[1] "sumavediam"
+[1] "all thalli"
+            
+             attach drift
+  Japan          85    15
+  Introduced      8    48
+lmer(formula = log(tmp[, y[i]]) ~ natnon + attachment.status2 + 
+    (1 | site), data = tmp)
+                           Estimate Std. Error        df    t value    Pr(>|t|)
+(Intercept)              0.37099805  0.1230099  20.62168  3.0160020 0.006667447
+natnonIntroduced         0.07954796  0.2152695  38.81127  0.3695273 0.713743384
+attachment.status2drift -0.06163099  0.1798182 109.73340 -0.3427406 0.732449317
+Type III Analysis of Variance Table with Satterthwaite's method
+                     Sum Sq  Mean Sq NumDF   DenDF F value Pr(>F)
+natnon             0.042262 0.042262     1  38.811  0.1366 0.7137
+attachment.status2 0.036357 0.036357     1 109.733  0.1175 0.7324
+[1] "reproductive tetrasporophytes only"
+            
+             attach drift
+  Japan          49     7
+  Introduced      8    38
+lmer(formula = log(tmp[, y[i]]) ~ natnon + attachment.status2 + 
+    (1 | site), data = tmp)
+                          Estimate Std. Error       df   t value   Pr(>|t|)
+(Intercept)             0.33877294  0.1702447 20.02575 1.9899176 0.06042916
+natnonIntroduced        0.06155638  0.2759451 32.58209 0.2230747 0.82487000
+attachment.status2drift 0.03900964  0.2400646 68.00322 0.1624964 0.87139684
+Type III Analysis of Variance Table with Satterthwaite's method
+                      Sum Sq   Mean Sq NumDF  DenDF F value Pr(>F)
+natnon             0.0138447 0.0138447     1 32.582  0.0498 0.8249
+attachment.status2 0.0073463 0.0073463     1 68.003  0.0264 0.8714
+[1] "sumrtvol"
+[1] "all thalli"
+            
+             attach drift
+  Japan          84    16
+  Introduced     11    48
+lmer(formula = log(tmp[, y[i]]) ~ natnon + attachment.status2 + 
+    (1 | site), data = tmp)
+                          Estimate Std. Error       df    t value   Pr(>|t|)
+(Intercept)              0.4243318  0.1513981 22.53716  2.8027541 0.01022508
+natnonIntroduced         0.2115037  0.2560920 37.37759  0.8258893 0.41410758
+attachment.status2drift -0.1947869  0.2169231 97.84014 -0.8979537 0.37141467
+Type III Analysis of Variance Table with Satterthwaite's method
+                    Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
+natnon             0.33165 0.33165     1 37.378  0.6821 0.4141
+attachment.status2 0.39205 0.39205     1 97.840  0.8063 0.3714
+[1] "reproductive tetrasporophytes only"
+            
+             attach drift
+  Japan          48     7
+  Introduced     11    38
+lmer(formula = log(tmp[, y[i]]) ~ natnon + attachment.status2 + 
+    (1 | site), data = tmp)
+                          Estimate Std. Error       df    t value  Pr(>|t|)
+(Intercept)              0.2432559  0.2031439 19.69277  1.1974559 0.2453445
+natnonIntroduced         0.4063710  0.3213364 28.99243  1.2646281 0.2160764
+attachment.status2drift -0.1412056  0.2867352 55.05271 -0.4924599 0.6243526
+Type III Analysis of Variance Table with Satterthwaite's method
+                    Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
+natnon             0.75750 0.75750     1 28.992  1.5993 0.2161
+attachment.status2 0.11487 0.11487     1 55.053  0.2425 0.6244

@@ -6,8 +6,8 @@ arch <- read.csv('data/architecture.csv')
 
 ### Table for MS
 
-out <- meta[,c("Continent","field_site_code_2015","Population","lat","long")]
-colnames(out) <- c("Continent","Population.code","Population","Latitude","Longitude")
+out <- meta[,c("Continent","field_site_code_2015","Population","SiteA","lat","long")]
+colnames(out) <- c("Continent","Population.code","Population","substrate","Latitude","Longitude")
 out$Continent <- factor(out$Continent,levels=levels(out$Continent)[c(2,4,3,1)])
 out <- out[order(out$Latitude),]
 out <- out[order(out$Continent),]
