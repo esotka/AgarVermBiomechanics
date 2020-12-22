@@ -32,13 +32,13 @@ arch$Collection.waterTemp <- meta$Collection.waterTemp[match(arch$site,meta$fiel
 #### DO ANOVAS - Length #####
 #### remove western NA #####
 tmp <- arch[arch$Length=="Y" & ! arch$Continent.short=="wNA",]
-m <- lmer(log(tmp[,"sumlength"])~Collection.waterTemp*Continent.short+(1|site), data=tmp)
+m <- lmer(log(tmp[,"sumlength"])~Collection.waterTemp+(1|site), data=tmp)
 print("all thalli")
 print(summary(m)$call)
 print(summary(m)$coefficients); print(anova(m))
 print("reproductive tetrasporophytes only")
 tmp <- arch[arch$Length=="Y"& arch$StacyLifehistory=="Tetrasporophyte" & !arch$Continent.short=="wNA",]
-m <- lmer(log(tmp[,"sumlength"])~Collection.waterTemp*Continent.short+(1|site), data=tmp)
+m <- lmer(log(tmp[,"sumlength"])~Collection.waterTemp+(1|site), data=tmp)
 print(summary(m)$call)
 print(summary(m)$coefficients); print(anova(m))
 
@@ -48,28 +48,28 @@ tmp <- arch[arch$Length=="Y" & ! arch$Continent.short=="wNA",]
 tmp <- melt(tmp[,c("site","natnon","Continent.short","sumlength")])
 tmp2 <- cast(tmp,site+natnon+Continent.short~variable,mean,na.rm=T)
 tmp2$Collection.waterTemp <- meta$Collection.waterTemp[match(tmp2$site,meta$field_site_code_2015)]
-fit <- lm(sumlength~Continent.short*Collection.waterTemp,data=tmp2)
-visreg(fit,"Collection.waterTemp",by="Continent.short")#,overlay=T)
+fit <- lm(sumlength~Collection.waterTemp,data=tmp2)
+visreg(fit)#,overlay=T)
 
 ### Reproductive thalli only
-tmp <- arch[arch$Surfacearea=="Y" & arch$StacyLifehistory=="Tetrasporophyte" & ! arch$Continent.short=="wNA",]
+tmp <- arch[arch$Length=="Y" & arch$StacyLifehistory=="Tetrasporophyte" & ! arch$Continent.short=="wNA",]
 tmp <- melt(tmp[,c("site","natnon","Continent.short","sumlength")])
 tmp2 <- cast(tmp,site+natnon+Continent.short~variable,mean,na.rm=T)
 tmp2$Collection.waterTemp <- meta$Collection.waterTemp[match(tmp2$site,meta$field_site_code_2015)]
-fit <- lm(sumlength~Continent.short*Collection.waterTemp,data=tmp2)
-visreg(fit,"Collection.waterTemp",by="Continent.short")#,overlay=T)
+fit <- lm(sumlength~Collection.waterTemp,data=tmp2)
+visreg(fit)
 
 
 #### DO ANOVAS - surface area #####
 #### remove western NA #####
 tmp <- arch[arch$Surfacearea=="Y" & ! arch$Continent.short=="wNA",]
-m <- lmer(log(tmp[,"sumprojarea"])~Collection.waterTemp*Continent.short+(1|site), data=tmp)
+m <- lmer(log(tmp[,"sumprojarea"])~Collection.waterTemp+(1|site), data=tmp)
 print("all thalli")
 print(summary(m)$call)
 print(summary(m)$coefficients); print(anova(m))
 print("reproductive tetrasporophytes only")
 tmp <- arch[arch$Surfacearea=="Y"& arch$StacyLifehistory=="Tetrasporophyte" & !arch$Continent.short=="wNA",]
-m <- lmer(log(tmp[,"sumprojarea"])~Collection.waterTemp*Continent.short+(1|site), data=tmp)
+m <- lmer(log(tmp[,"sumprojarea"])~Collection.waterTemp+(1|site), data=tmp)
 print(summary(m)$call)
 print(summary(m)$coefficients); print(anova(m))
 
@@ -79,16 +79,16 @@ tmp <- arch[arch$Surfacearea=="Y" & ! arch$Continent.short=="wNA",]
 tmp <- melt(tmp[,c("site","natnon","Continent.short","sumprojarea")])
 tmp2 <- cast(tmp,site+natnon+Continent.short~variable,mean,na.rm=T)
 tmp2$Collection.waterTemp <- meta$Collection.waterTemp[match(tmp2$site,meta$field_site_code_2015)]
-fit <- lm(sumprojarea~Continent.short*Collection.waterTemp,data=tmp2)
-visreg(fit,"Collection.waterTemp",by="Continent.short")#,overlay=T)
+fit <- lm(sumprojarea~Collection.waterTemp,data=tmp2)
+visreg(fit)
 
 ### Reproductive thalli only
 tmp <- arch[arch$Surfacearea=="Y" & arch$StacyLifehistory=="Tetrasporophyte" & ! arch$Continent.short=="wNA",]
 tmp <- melt(tmp[,c("site","natnon","Continent.short","sumprojarea")])
 tmp2 <- cast(tmp,site+natnon+Continent.short~variable,mean,na.rm=T)
 tmp2$Collection.waterTemp <- meta$Collection.waterTemp[match(tmp2$site,meta$field_site_code_2015)]
-fit <- lm(sumprojarea~Continent.short*Collection.waterTemp,data=tmp2)
-visreg(fit,"Collection.waterTemp",by="Continent.short")#,overlay=T)
+fit <- lm(sumprojarea~Collection.waterTemp,data=tmp2)
+visreg(fit)
 
 
 

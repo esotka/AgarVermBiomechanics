@@ -2,36 +2,36 @@
 lmer(formula = log(peak_force) ~ natnon * MudRock + (1 | site), 
     data = br)
                                    Estimate Std. Error       df    t value  Pr(>|t|)
-(Intercept)                      0.08473199  0.1705990 39.39710  0.4966733 0.6221797
-natnonIntroduced                 0.43661956  0.2667723 37.84222  1.6366748 0.1099894
-MudRockmudflat                  -0.20670511  0.2187275 38.41962 -0.9450349 0.3505468
-natnonIntroduced:MudRockmudflat -0.23192912  0.3123779 37.60900 -0.7424633 0.4624190
+(Intercept)                      0.08473201  0.1705983 39.39763  0.4966756 0.6221780
+natnonNon-native                 0.43661954  0.2667712 37.84272  1.6366820 0.1099878
+MudRockmudflat                  -0.20670510  0.2187265 38.42012 -0.9450389 0.3505447
+natnonNon-native:MudRockmudflat -0.23192911  0.3123765 37.60949 -0.7424665 0.4624170
 Type III Analysis of Variance Table with Satterthwaite's method
                 Sum Sq Mean Sq NumDF  DenDF F value  Pr(>F)  
-natnon         1.15112 1.15112     1 37.609  4.2148 0.04708 *
-MudRock        1.16563 1.16563     1 37.609  4.2679 0.04578 *
+natnon         1.15113 1.15113     1 37.609  4.2148 0.04708 *
+MudRock        1.16564 1.16564     1 37.609  4.2680 0.04578 *
 natnon:MudRock 0.15056 0.15056     1 37.609  0.5513 0.46242  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 lmer(formula = log(peak_force) ~ natnon + MudRock + (1 | site), 
     data = br)
                    Estimate Std. Error       df   t value   Pr(>|t|)
-(Intercept)       0.1539539  0.1420760 39.65988  1.083602 0.28508501
-natnonIntroduced  0.2674463  0.1379662 38.20519  1.938492 0.05997745
-MudRockmudflat   -0.3204090  0.1552353 38.64136 -2.064022 0.04577653
+(Intercept)       0.1539539  0.1420753 39.66044  1.083608 0.28508260
+natnonNon-native  0.2674463  0.1379655 38.20572  1.938501 0.05997621
+MudRockmudflat   -0.3204090  0.1552346 38.64189 -2.064031 0.04577547
 Type III Analysis of Variance Table with Satterthwaite's method
         Sum Sq Mean Sq NumDF  DenDF F value  Pr(>F)  
-natnon  1.0263  1.0263     1 38.205  3.7578 0.05998 .
-MudRock 1.1635  1.1635     1 38.641  4.2602 0.04578 *
+natnon  1.0263  1.0263     1 38.206  3.7578 0.05998 .
+MudRock 1.1635  1.1635     1 38.642  4.2602 0.04578 *
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 lmer(formula = log(maxstress) ~ natnon * MudRock + (1 | site), 
     data = br)
                                    Estimate Std. Error       df    t value  Pr(>|t|)
-(Intercept)                      0.15898348  0.1403837 40.45849  1.1324923 0.2640948
-natnonIntroduced                -0.04731704  0.2180774 38.10504 -0.2169736 0.8293865
-MudRockmudflat                  -0.21869242  0.1792508 38.97358 -1.2200360 0.2297825
-natnonIntroduced:MudRockmudflat  0.19781628  0.2550929 37.74736  0.7754677 0.4428947
+(Intercept)                      0.15898347  0.1403837 40.45852  1.1324926 0.2640946
+natnonNon-native                -0.04731704  0.2180774 38.10507 -0.2169736 0.8293865
+MudRockmudflat                  -0.21869241  0.1792507 38.97361 -1.2200363 0.2297824
+natnonNon-native:MudRockmudflat  0.19781627  0.2550928 37.74739  0.7754679 0.4428946
 Type III Analysis of Variance Table with Satterthwaite's method
                  Sum Sq  Mean Sq NumDF  DenDF F value Pr(>F)
 natnon         0.051087 0.051087     1 37.747  0.1636 0.6881
@@ -40,20 +40,25 @@ natnon:MudRock 0.187768 0.187768     1 37.747  0.6014 0.4429
 lmer(formula = log(maxstress) ~ natnon + MudRock + (1 | site), 
     data = br)
                     Estimate Std. Error       df    t value  Pr(>|t|)
-(Intercept)       0.09898309  0.1165381 40.21652  0.8493624 0.4007076
-natnonIntroduced  0.09726991  0.1124688 38.04647  0.8648616 0.3925353
-MudRockmudflat   -0.12095837  0.1267873 38.69882 -0.9540257 0.3459922
+(Intercept)       0.09898309  0.1165381 40.21657  0.8493627 0.4007075
+natnonNon-native  0.09726991  0.1124687 38.04651  0.8648619 0.3925351
+MudRockmudflat   -0.12095837  0.1267873 38.69887 -0.9540261 0.3459920
 Type III Analysis of Variance Table with Satterthwaite's method
          Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
-natnon  0.23357 0.23357     1 38.046  0.7480 0.3925
+natnon  0.23357 0.23357     1 38.047  0.7480 0.3925
 MudRock 0.28421 0.28421     1 38.699  0.9102 0.3460
 lmer(formula = log(maxstrain) ~ natnon * MudRock + (1 | site), 
     data = br)
-                                  Estimate Std. Error       df    t value     Pr(>|t|)
-(Intercept)                     -1.3037755  0.1567198 39.13855 -8.3191476 3.472580e-10
-natnonIntroduced                -0.2341375  0.2456994 37.91870 -0.9529426 3.466546e-01
-MudRockmudflat                  -0.2893877  0.2012542 38.37250 -1.4379212 1.585623e-01
-natnonIntroduced:MudRockmudflat  0.1152179  0.2878167 37.73618  0.4003171 6.911803e-01
+                                  Estimate Std. Error       df    t value
+(Intercept)                     -1.3037755  0.1567197 39.13870 -8.3191575
+natnonNon-native                -0.2341374  0.2456991 37.91883 -0.9529437
+MudRockmudflat                  -0.2893877  0.2012540 38.37264 -1.4379228
+natnonNon-native:MudRockmudflat  0.1152179  0.2878164 37.73631  0.4003175
+                                    Pr(>|t|)
+(Intercept)                     3.472377e-10
+natnonNon-native                3.466541e-01
+MudRockmudflat                  1.585619e-01
+natnonNon-native:MudRockmudflat 6.911800e-01
 Type III Analysis of Variance Table with Satterthwaite's method
                 Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
 natnon         0.26112 0.26112     1 37.736  1.5047 0.2275
@@ -62,20 +67,25 @@ natnon:MudRock 0.02781 0.02781     1 37.736  0.1603 0.6912
 lmer(formula = log(maxstrain) ~ natnon + MudRock + (1 | site), 
     data = br)
                    Estimate Std. Error       df    t value     Pr(>|t|)
-(Intercept)      -1.3380162  0.1299870 39.55782 -10.293464 9.490954e-13
-natnonIntroduced -0.1501747  0.1265208 38.39980  -1.186956 2.425362e-01
-MudRockmudflat   -0.2329589  0.1422563 38.74719  -1.637599 1.096024e-01
+(Intercept)      -1.3380162  0.1299868 39.55794 -10.293475 9.490312e-13
+natnonNon-native -0.1501747  0.1265207 38.39992  -1.186957 2.425357e-01
+MudRockmudflat   -0.2329588  0.1422562 38.74732  -1.637601 1.096020e-01
 Type III Analysis of Variance Table with Satterthwaite's method
          Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
-natnon  0.24448 0.24448     1 38.400  1.4089 0.2425
+natnon  0.24449 0.24449     1 38.400  1.4089 0.2425
 MudRock 0.46537 0.46537     1 38.747  2.6817 0.1096
 lmer(formula = log(auc_modulus) ~ natnon * MudRock + (1 | site), 
     data = br)
-                                  Estimate Std. Error       df    t value     Pr(>|t|)
-(Intercept)                     -1.9635564  0.2512368 40.56280 -7.8155618 1.281575e-09
-natnonIntroduced                -0.2142119  0.3911969 38.45568 -0.5475807 5.871442e-01
-MudRockmudflat                  -0.5214305  0.3212621 39.23532 -1.6230686 1.125835e-01
-natnonIntroduced:MudRockmudflat  0.2706876  0.4577675 38.13733  0.5913211 5.577942e-01
+                                  Estimate Std. Error       df    t value
+(Intercept)                     -1.9635564  0.2512367 40.56284 -7.8155641
+natnonNon-native                -0.2142119  0.3911968 38.45572 -0.5475808
+MudRockmudflat                  -0.5214305  0.3212620 39.23535 -1.6230691
+natnonNon-native:MudRockmudflat  0.2706876  0.4577673 38.13737  0.5913213
+                                    Pr(>|t|)
+(Intercept)                     1.281557e-09
+natnonNon-native                5.871441e-01
+MudRockmudflat                  1.125834e-01
+natnonNon-native:MudRockmudflat 5.577941e-01
 Type III Analysis of Variance Table with Satterthwaite's method
                 Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)  
 natnon         0.10089 0.10089     1 38.137  0.1187 0.7323  
@@ -87,7 +97,7 @@ lmer(formula = log(auc_modulus) ~ natnon + MudRock + (1 | site),
     data = br)
                     Estimate Std. Error       df     t value     Pr(>|t|)
 (Intercept)      -2.04533931  0.2081122 40.45935 -9.82806280 2.809447e-12
-natnonIntroduced -0.01650093  0.2012702 38.49999 -0.08198399 9.350842e-01
+natnonNon-native -0.01650093  0.2012702 38.49999 -0.08198399 9.350842e-01
 MudRockmudflat   -0.38787569  0.2267462 39.08805 -1.71061581 9.507902e-02
 Type III Analysis of Variance Table with Satterthwaite's method
          Sum Sq Mean Sq NumDF  DenDF F value  Pr(>F)  
@@ -97,21 +107,26 @@ MudRock 2.48660 2.48660     1 39.088  2.9262 0.09508 .
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 lmer(formula = log(slope_Mpa) ~ natnon * MudRock + (1 | site), 
     data = br)
-                                  Estimate Std. Error       df    t value     Pr(>|t|)
-(Intercept)                     1.72710661  0.1292514 39.53718 13.3623780 3.025844e-16
-natnonIntroduced                0.14791082  0.2020713 37.95014  0.7319733 4.686813e-01
-MudRockmudflat                  0.05349002  0.1656926 38.53939  0.3228268 7.485714e-01
-natnonIntroduced:MudRockmudflat 0.09600792  0.2366080 37.71204  0.4057678 6.872063e-01
+                                  Estimate Std. Error       df    t value
+(Intercept)                     1.72710662  0.1292508 39.53774 13.3624396
+natnonNon-native                0.14791078  0.2020704 37.95068  0.7319766
+MudRockmudflat                  0.05348998  0.1656919 38.53993  0.3228280
+natnonNon-native:MudRockmudflat 0.09600797  0.2366069 37.71256  0.4057699
+                                    Pr(>|t|)
+(Intercept)                     3.024610e-16
+natnonNon-native                4.686793e-01
+MudRockmudflat                  7.485705e-01
+natnonNon-native:MudRockmudflat 6.872048e-01
 Type III Analysis of Variance Table with Satterthwaite's method
                 Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
-natnon         0.43917 0.43917     1 37.712  2.7424 0.1060
-MudRock        0.11786 0.11786     1 37.712  0.7360 0.3964
-natnon:MudRock 0.02637 0.02637     1 37.712  0.1646 0.6872
+natnon         0.43918 0.43918     1 37.713  2.7425 0.1060
+MudRock        0.11787 0.11787     1 37.713  0.7360 0.3964
+natnon:MudRock 0.02637 0.02637     1 37.713  0.1646 0.6872
 lmer(formula = log(slope_Mpa) ~ natnon + MudRock + (1 | site), 
     data = br)
                   Estimate Std. Error       df    t value     Pr(>|t|)
 (Intercept)      1.6984477  0.1071256 39.85412 15.8547258 8.263354e-19
-natnonIntroduced 0.2179392  0.1039962 38.35669  2.0956457 4.276577e-02
+natnonNon-native 0.2179392  0.1039962 38.35669  2.0956457 4.276577e-02
 MudRockmudflat   0.1005316  0.1170239 38.80567  0.8590691 3.955782e-01
 Type III Analysis of Variance Table with Satterthwaite's method
          Sum Sq Mean Sq NumDF  DenDF F value  Pr(>F)  
@@ -124,9 +139,9 @@ lmer(formula = log(peak_force) ~ natnon * MudRock + (1 | site),
     data = br2)
                                   Estimate Std. Error       df    t value  Pr(>|t|)
 (Intercept)                      0.1126091  0.1752220 32.91216  0.6426651 0.5248935
-natnonIntroduced                 0.4122095  0.2658639 30.06111  1.5504529 0.1314981
+natnonNon-native                 0.4122095  0.2658639 30.06111  1.5504529 0.1314981
 MudRockmudflat                  -0.2456802  0.2246017 32.50465 -1.0938481 0.2820618
-natnonIntroduced:MudRockmudflat -0.1717188  0.3158786 30.96076 -0.5436229 0.5905943
+natnonNon-native:MudRockmudflat -0.1717188  0.3158786 30.96076 -0.5436229 0.5905943
 Type III Analysis of Variance Table with Satterthwaite's method
                Sum Sq Mean Sq NumDF  DenDF F value  Pr(>F)  
 natnon         1.1341  1.1341     1 30.961  4.2696 0.04725 *
@@ -137,9 +152,9 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 lmer(formula = log(peak_force) ~ natnon + MudRock + (1 | site), 
     data = br2)
                    Estimate Std. Error       df   t value   Pr(>|t|)
-(Intercept)       0.1653940  0.1444786 33.05360  1.144765 0.26052853
-natnonIntroduced  0.2904307  0.1422790 33.36516  2.041275 0.04919696
-MudRockmudflat   -0.3317483  0.1564822 31.91980 -2.120039 0.04187150
+(Intercept)       0.1653940  0.1444784 33.05370  1.144766 0.26052796
+natnonNon-native  0.2904307  0.1422789 33.36526  2.041278 0.04919669
+MudRockmudflat   -0.3317482  0.1564820 31.91990 -2.120041 0.04187130
 Type III Analysis of Variance Table with Satterthwaite's method
         Sum Sq Mean Sq NumDF  DenDF F value  Pr(>F)  
 natnon  1.1066  1.1066     1 33.365  4.1668 0.04920 *
@@ -149,10 +164,10 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 lmer(formula = log(maxstress) ~ natnon * MudRock + (1 | site), 
     data = br2)
                                   Estimate Std. Error       df    t value   Pr(>|t|)
-(Intercept)                      0.2132266  0.1399647 26.79641  1.5234314 0.13936654
-natnonIntroduced                -0.1038284  0.2096918 24.25083 -0.4951476 0.62495267
-MudRockmudflat                  -0.3197688  0.1791514 26.55682 -1.7849075 0.08570486
-natnonIntroduced:MudRockmudflat  0.2341424  0.2502592 25.16903  0.9355998 0.35837002
+(Intercept)                      0.2132266  0.1399646 26.79641  1.5234316 0.13936648
+natnonNon-native                -0.1038284  0.2096918 24.25084 -0.4951477 0.62495262
+MudRockmudflat                  -0.3197688  0.1791514 26.55683 -1.7849078 0.08570481
+natnonNon-native:MudRockmudflat  0.2341424  0.2502591 25.16904  0.9356000 0.35836992
 Type III Analysis of Variance Table with Satterthwaite's method
                 Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
 natnon         0.00320 0.00320     1 25.169  0.0112 0.9166
@@ -161,20 +176,20 @@ natnon:MudRock 0.25002 0.25002     1 25.169  0.8753 0.3584
 lmer(formula = log(maxstress) ~ natnon + MudRock + (1 | site), 
     data = br2)
                     Estimate Std. Error       df    t value  Pr(>|t|)
-(Intercept)       0.13998707  0.1160058 27.24288  1.2067243 0.2379128
-natnonIntroduced  0.06055829  0.1144335 27.72564  0.5292005 0.6008782
-MudRockmudflat   -0.19977768  0.1250668 26.26383 -1.5973672 0.1221473
+(Intercept)       0.13998706  0.1160058 27.24288  1.2067245 0.2379127
+natnonNon-native  0.06055829  0.1144335 27.72565  0.5292006 0.6008781
+MudRockmudflat   -0.19977767  0.1250668 26.26384 -1.5973674 0.1221472
 Type III Analysis of Variance Table with Satterthwaite's method
          Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
 natnon  0.07997 0.07997     1 27.726  0.2801 0.6009
-MudRock 0.72861 0.72861     1 26.264  2.5516 0.1221
+MudRock 0.72862 0.72862     1 26.264  2.5516 0.1221
 lmer(formula = log(maxstrain) ~ natnon * MudRock + (1 | site), 
     data = br2)
                                   Estimate Std. Error       df   t value     Pr(>|t|)
 (Intercept)                     -1.2956913  0.1545925 34.39175 -8.381335 7.975021e-10
-natnonIntroduced                -0.2467609  0.2361333 31.62745 -1.045007 3.039413e-01
+natnonNon-native                -0.2467609  0.2361333 31.62745 -1.045007 3.039413e-01
 MudRockmudflat                  -0.2865501  0.1983495 33.94633 -1.444672 1.577179e-01
-natnonIntroduced:MudRockmudflat  0.1615241  0.2799601 32.43855  0.576954 5.679533e-01
+natnonNon-native:MudRockmudflat  0.1615241  0.2799601 32.43855  0.576954 5.679533e-01
 Type III Analysis of Variance Table with Satterthwaite's method
                 Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
 natnon         0.21552 0.21552     1 32.439  1.4063 0.2443
@@ -183,20 +198,25 @@ natnon:MudRock 0.05101 0.05101     1 32.439  0.3329 0.5680
 lmer(formula = log(maxstrain) ~ natnon + MudRock + (1 | site), 
     data = br2)
                    Estimate Std. Error       df    t value     Pr(>|t|)
-(Intercept)      -1.3449091  0.1275446 34.36402 -10.544620 2.593516e-12
-natnonIntroduced -0.1320028  0.1255344 34.54597  -1.051527 3.003168e-01
-MudRockmudflat   -0.2050307  0.1384977 33.24395  -1.480390 1.481850e-01
+(Intercept)      -1.3449091  0.1275444 34.36415 -10.544635 2.593303e-12
+natnonNon-native -0.1320029  0.1255342 34.54610  -1.051529 3.003160e-01
+MudRockmudflat   -0.2050306  0.1384975 33.24407  -1.480392 1.481845e-01
 Type III Analysis of Variance Table with Satterthwaite's method
          Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
 natnon  0.16947 0.16947     1 34.546  1.1057 0.3003
 MudRock 0.33589 0.33589     1 33.244  2.1916 0.1482
 lmer(formula = log(auc_modulus) ~ natnon * MudRock + (1 | site), 
     data = br2)
-                                  Estimate Std. Error       df    t value     Pr(>|t|)
-(Intercept)                     -1.8860013  0.2492317 28.94867 -7.5672620 2.451409e-08
-natnonIntroduced                -0.2992877  0.3749105 26.26179 -0.7982910 4.318617e-01
-MudRockmudflat                  -0.6162319  0.3191358 28.64793 -1.9309397 6.344051e-02
-natnonIntroduced:MudRockmudflat  0.3452343  0.4467706 27.19073  0.7727329 4.463460e-01
+                                  Estimate Std. Error       df    t value
+(Intercept)                     -1.8860013  0.2492316 28.94869 -7.5672634
+natnonNon-native                -0.2992877  0.3749104 26.26180 -0.7982912
+MudRockmudflat                  -0.6162319  0.3191357 28.64794 -1.9309401
+natnonNon-native:MudRockmudflat  0.3452343  0.4467705 27.19074  0.7727330
+                                    Pr(>|t|)
+(Intercept)                     2.451393e-08
+natnonNon-native                4.318616e-01
+MudRockmudflat                  6.344047e-02
+natnonNon-native:MudRockmudflat 4.463459e-01
 Type III Analysis of Variance Table with Satterthwaite's method
                 Sum Sq Mean Sq NumDF  DenDF F value  Pr(>F)  
 natnon         0.24764 0.24764     1 27.191  0.3215 0.57533  
@@ -207,27 +227,27 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 lmer(formula = log(auc_modulus) ~ natnon + MudRock + (1 | site), 
     data = br2)
                     Estimate Std. Error       df    t value     Pr(>|t|)
-(Intercept)      -1.99351448  0.2054632 28.97944 -9.7025379 1.313018e-10
-natnonIntroduced -0.05616073  0.2025554 29.41870 -0.2772611 7.835187e-01
-MudRockmudflat   -0.43948942  0.2218165 27.94605 -1.9813199 5.747185e-02
+(Intercept)      -1.99351448  0.2054632 28.97946 -9.7025397 1.313007e-10
+natnonNon-native -0.05616073  0.2025554 29.41871 -0.2772611 7.835186e-01
+MudRockmudflat   -0.43948940  0.2218164 27.94606 -1.9813202 5.747181e-02
 Type III Analysis of Variance Table with Satterthwaite's method
          Sum Sq Mean Sq NumDF  DenDF F value  Pr(>F)  
 natnon  0.05921 0.05921     1 29.419  0.0769 0.78352  
-MudRock 3.02351 3.02351     1 27.946  3.9256 0.05747 .
+MudRock 3.02352 3.02352     1 27.946  3.9256 0.05747 .
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 lmer(formula = log(slope_Mpa) ~ natnon * MudRock + (1 | site), 
     data = br2)
                                    Estimate Std. Error       df    t value
-(Intercept)                      1.77397980  0.1353754 32.53596 13.1041539
-natnonIntroduced                 0.10585170  0.2054089 29.71580  0.5153219
-MudRockmudflat                  -0.05726857  0.1735263 32.13266 -0.3300282
-natnonIntroduced:MudRockmudflat  0.08462601  0.2440490 30.60545  0.3467582
+(Intercept)                      1.77397978  0.1353753 32.53601 13.1041608
+natnonNon-native                 0.10585171  0.2054088 29.71584  0.5153223
+MudRockmudflat                  -0.05726857  0.1735262 32.13271 -0.3300284
+natnonNon-native:MudRockmudflat  0.08462601  0.2440489 30.60550  0.3467584
                                     Pr(>|t|)
-(Intercept)                     1.581288e-14
-natnonIntroduced                6.101407e-01
-MudRockmudflat                  7.435207e-01
-natnonIntroduced:MudRockmudflat 7.311459e-01
+(Intercept)                     1.581227e-14
+natnonNon-native                6.101405e-01
+MudRockmudflat                  7.435205e-01
+natnonNon-native:MudRockmudflat 7.311458e-01
 Type III Analysis of Variance Table with Satterthwaite's method
                  Sum Sq  Mean Sq NumDF  DenDF F value Pr(>F)
 natnon         0.233557 0.233557     1 30.605  1.4743 0.2339
@@ -237,7 +257,7 @@ lmer(formula = log(slope_Mpa) ~ natnon + MudRock + (1 | site),
     data = br2)
                     Estimate Std. Error       df    t value     Pr(>|t|)
 (Intercept)       1.74755861  0.1111028 32.62136 15.7292007 8.665933e-17
-natnonIntroduced  0.16612954  0.1094137 32.93338  1.5183621 1.384655e-01
+natnonNon-native  0.16612954  0.1094137 32.93338  1.5183621 1.384655e-01
 MudRockmudflat   -0.01437641  0.1203242 31.50013 -0.1194806 9.056534e-01
 Type III Analysis of Variance Table with Satterthwaite's method
          Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)

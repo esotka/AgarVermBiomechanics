@@ -33,5 +33,9 @@ tmp <- tmp[tmp$n.Var2=="Y",]
 out$n.Architecture.Volume <- tmp$n.Freq[match(out$Population.code,tmp$n.Var1)]
 out[out==0] <- NA
 
+out$Population.code2 <- as.character(out$Population.code)
+out$Population.code <- meta$site_code_for_ms[match(out$Population.code2,meta$field_site_code_2015)]
+out <- out[,!names(out)=="Population.code2"]
+
 #c("Length","Surfacearea","Surfacearea","Diameter","Volume")
 write.csv(out,"output/Table-SampleSize.csv",row.names = F)

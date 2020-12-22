@@ -6,6 +6,9 @@ library(lmerTest)
 library(reshape)
 ### site Metadata
 meta <- read.csv('data/siteMeta.csv')
+meta$NatNon <- as.character(meta$NatNon)
+meta$NatNon[meta$NatNon=="Introduced"] <- "Non-native"
+meta$NatNon <- as.factor(meta$NatNon)
 sink('output/MaterialProperties.anova-drift.vs.attached.txt')
 pdf('output/MaterialProperties-drift.vs.attached.pdf')
 #####################
@@ -27,7 +30,7 @@ br$attach3[as.character(br$attachment)%in%c("buried","diopatra","drift","drift_b
 br$attach3[as.character(br$attachment)%in%c("attached","bedrock","bedrock_Tide_pool","buried_attached","buried_rock","h_with_sand","hard_rock","large_pebbles","large_rock","large_stones","oyster","p_with_sand","pebble","pebbles","rock","rope","shell","stick","tiny_pebble","wood")] <- "attach"
 br$attach3 <- factor(br$attach3)
 br$natnon <- meta$NatNon[match(br$site,meta$field_site_code_2015)]
-br$natnon <- factor(br$natnon,levels=c("Japan","Introduced"))
+br$natnon <- factor(br$natnon,levels=c("Japan","Non-native"))
 
 #### peak break ###
 print("all thalli")

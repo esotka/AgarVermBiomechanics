@@ -40,13 +40,33 @@ m <- lmer(log(tmp[,"sumprojarea"])~JanSST*Continent.short+(1|site), data=tmp)
 print(summary(m)$call)
 print(summary(m)$coefficients); print(anova(m))
 
-pdf("output/SurfaceArea-byJanSST-prettyPlot.pdf",width=5,height=5)
-### plot - 3 continents
-### all thalli
+
 tmp <- arch[arch$Surfacearea=="Y" & ! arch$Continent.short=="wNA",]
 tmp <- melt(tmp[,c("site","natnon","Continent.short","sumprojarea")])
 tmp2 <- cast(tmp,site+natnon+Continent.short~variable,mean,na.rm=T)
 tmp2$janSST <- meta$JanSST[match(tmp2$site,meta$field_site_code_2015)]
+
+
+f1 <-  ggplot(data=tmp2, aes(x=janSST,y=sumprojarea)) +
+  geom_point(size=2.0, aes(shape=Continent.short)) +
+  scale_shape_manual(values=c(21,19,17)) +
+  geom_smooth(method=lm,aes(linetype=Continent.short),size=.5,color="black") +
+  theme_classic() +
+  ylab("Surface area") +
+  xlab("January SST") +
+  theme(legend.position = "top")
+
+
+
+png('output/SurfaceArea-byJanSST-prettyPlot.png',width=5,height=9,units="in",res=700)
+grid.arrange(f1,nrow=3,ncol=1)
+dev.off()
+
+
+
+
+### plot - 3 continents
+### all thalli
 fit <- lm(sumprojarea~Continent.short*janSST,data=tmp2)
 visreg(fit,"janSST",by="Continent.short")#,overlay=T)
 
@@ -58,8 +78,6 @@ tmp2$janSST <- meta$JanSST[match(tmp2$site,meta$field_site_code_2015)]
 fit <- lm(sumprojarea~Continent.short*janSST,data=tmp2)
 visreg(fit,"janSST",by="Continent.short")#,overlay=T)
 
-
-dev.off()
 
 
 
