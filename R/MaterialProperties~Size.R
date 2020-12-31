@@ -44,7 +44,7 @@ archtmp$value <- log(archtmp$value)
 archtmp2 <- cast(archtmp,site+natnon+Continent.short~variable,mean,na.rm=T)
 all <- data.frame(archtmp2)
 
-#### log of material properties ###
+#### log of material properties -all data ###
 y <- c("peak_force","maxstress","maxstrain","auc_modulus","slope_Mpa")
 corr.out <- c()
 for (i in 1:5)
@@ -64,8 +64,35 @@ for (i in 1:5)
   p.non = cor.test(tmp[tmp$natnon=="Introduced",1],tmp[tmp$natnon=="Introduced",2])$p.value
   cor.est.non = cor.test(tmp[tmp$natnon=="Introduced",1],tmp[tmp$natnon=="Introduced",2])$estimate
   
-  corr.out <- rbind(corr.out,data.frame(x="sumprojarea",y=y[i],p,cor.est,p.nat,cor.est.nat,p.non,cor.est.non))
+  corr.out <- rbind(corr.out,data.frame(x="sumprojarea",y=y[i],data="all",p,cor.est,p.nat,cor.est.nat,p.non,cor.est.non))
 }
+
+
+### corr tests of non-transformed data & spearman rank ##
+y <- c("peak_force","maxstress","maxstrain","auc_modulus","slope_Mpa")
+spear.corr.out <- c()
+for (j in 1:5)
+{
+  brtmp <- tapply(br[,colnames(br)==y[j]],br$site,mean,na.rm=T)
+  all[,ncol(all)+1] <- brtmp[match(all$site,names(brtmp))]
+  ### corr tests
+  tmp <- data.frame(all[,ncol(all)],all$sumprojarea,natnon=all$natnon)
+  tmp <- tmp[complete.cases(tmp),]
+  p = cor.test(tmp[,1],tmp[,2],method = "spearman")$p.value
+  cor.est = cor.test(tmp[,1],tmp[,2],method = "spearman")$estimate
+  ### corr tests native only
+  p.nat = cor.test(tmp[tmp$natnon=="Japan",1],tmp[tmp$natnon=="Japan",2],method = "spearman")$p.value
+  cor.est.nat = cor.test(tmp[tmp$natnon=="Japan",1],tmp[tmp$natnon=="Japan",2],method = "spearman")$estimate
+  
+  ### corr tests non-native only
+  p.non = cor.test(tmp[tmp$natnon=="Introduced",1],tmp[tmp$natnon=="Introduced",2],method = "spearman")$p.value
+  cor.est.non = cor.test(tmp[tmp$natnon=="Introduced",1],tmp[tmp$natnon=="Introduced",2],method = "spearman")$estimate
+  
+  spear.corr.out <- rbind(spear.corr.out,data.frame(x="sumprojarea",y=y[j],data="all",p,cor.est,p.nat,cor.est.nat,p.non,cor.est.non))
+}
+
+
+
 colnames(all)[5:9] <- y
 all <- all[complete.cases(all),]
 pdf('output/MaterialProperties~size.pdf')
@@ -102,8 +129,34 @@ for (i in 1:5)
   p.non = cor.test(tmp[tmp$natnon=="Introduced",1],tmp[tmp$natnon=="Introduced",2])$p.value
   cor.est.non = cor.test(tmp[tmp$natnon=="Introduced",1],tmp[tmp$natnon=="Introduced",2])$estimate
   
-  corr.out <- rbind(corr.out,data.frame(x="sumprojarea",y=y[i],p,cor.est,p.nat,cor.est.nat,p.non,cor.est.non))
+  corr.out <- rbind(corr.out,data.frame(x="sumprojarea",y=y[i],data="tetrasporophytes",p,cor.est,p.nat,cor.est.nat,p.non,cor.est.non))
 }
+
+### corr tests of non-transformed data & spearman rank ##
+y <- c("peak_force","maxstress","maxstrain","auc_modulus","slope_Mpa")
+for (j in 1:5)
+{
+  brtmp <- tapply(br[,colnames(br)==y[j]],br$site,mean,na.rm=T)
+  all[,ncol(all)+1] <- brtmp[match(all$site,names(brtmp))]
+  ### corr tests
+  tmp <- data.frame(all[,ncol(all)],all$sumprojarea,natnon=all$natnon)
+  tmp <- tmp[complete.cases(tmp),]
+  p = cor.test(tmp[,1],tmp[,2],method = "spearman")$p.value
+  cor.est = cor.test(tmp[,1],tmp[,2],method = "spearman")$estimate
+  ### corr tests native only
+  p.nat = cor.test(tmp[tmp$natnon=="Japan",1],tmp[tmp$natnon=="Japan",2],method = "spearman")$p.value
+  cor.est.nat = cor.test(tmp[tmp$natnon=="Japan",1],tmp[tmp$natnon=="Japan",2],method = "spearman")$estimate
+  
+  ### corr tests non-native only
+  p.non = cor.test(tmp[tmp$natnon=="Introduced",1],tmp[tmp$natnon=="Introduced",2],method = "spearman")$p.value
+  cor.est.non = cor.test(tmp[tmp$natnon=="Introduced",1],tmp[tmp$natnon=="Introduced",2],method = "spearman")$estimate
+  
+  spear.corr.out <- rbind(spear.corr.out,data.frame(x="sumprojarea",y=y[j],data="tetrasporophytes",p,cor.est,p.nat,cor.est.nat,p.non,cor.est.non))
+}
+print(spear.corr.out)
+
+
+
 colnames(all)[5:9] <- y
 all <- all[complete.cases(all),]
 
@@ -112,4 +165,4 @@ print(scatterplotMatrix(~sumprojarea + peak_force + maxstress + maxstrain + auc_
 
 dev.off()
 
-write.csv(corr.out,'output/MaterialProperties~size.correlations.csv')
+#write.csv(corr.out,'output/MaterialProperties~size.correlations.csv')
