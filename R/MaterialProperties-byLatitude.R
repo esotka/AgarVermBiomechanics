@@ -13,6 +13,7 @@ sink('output/MaterialProperties.byLatitude.txt')
 br <- read.csv('data/breakage.csv')
 br$site <- tolower(substr(br$sample_id,1,3))
 br$Continent <- meta$Continent[match(br$site,meta$field_site_code_2015)]
+br$Continent <- factor(br$Continent)
 br$Continent <- factor(br$Continent,levels=levels(br$Continent)[c(2,4,3,1)])
 code <- data.frame(long=levels(br$Continent),short=c("Japan","wNA","eNA","Europe"))
 br$Continent.short <- code$short[match(br$Continent,code$long)]
@@ -62,11 +63,15 @@ sink()
 # peak force
 tmp <- melt(br[!br$Continent=="NorthAmericaWest",c("site","peak_force")])
 tmp2 <- cast(tmp,site~variable,mean,na.rm=T)
+tmp2$sd <- cast(tmp,site~variable,sd,na.rm=T)$peak_force
+tmp2$n <- table(tmp$site)
+tmp2$se <- (tmp2$sd)/sqrt(tmp2$n)
 tmp2$lat <- meta$lat[match(tmp2$site,meta$field_site_code_2015)]
 tmp2$Continent <- br$Continent.short[match(tmp2$site,br$site)]
 
-f1 <-  ggplot(data=tmp2, aes(x=lat,y=peak_force)) +
-    geom_point(size=2.0, aes(shape=Continent)) +
+f1 <-  ggplot(data=tmp2, aes(x=lat,y=peak_force,ymin=peak_force-se,ymax=peak_force+se)) +
+    geom_pointrange(size=0.5, aes(shape=Continent)) +
+    scale_fill_manual(values=c("white","grey")) +
     scale_shape_manual(values=c(21,19,17)) +
     geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
     theme_classic() +
@@ -80,11 +85,14 @@ f1 <-  ggplot(data=tmp2, aes(x=lat,y=peak_force)) +
 # maxstrain
 tmp <- melt(br[!br$Continent=="NorthAmericaWest",c("site","maxstrain")])
 tmp2 <- cast(tmp,site~variable,mean,na.rm=T)
+tmp2$sd <- cast(tmp,site~variable,sd,na.rm=T)$maxstrain
+tmp2$n <- table(tmp$site)
+tmp2$se <- (tmp2$sd)/sqrt(tmp2$n)
 tmp2$lat <- meta$lat[match(tmp2$site,meta$field_site_code_2015)]
 tmp2$Continent <- br$Continent.short[match(tmp2$site,br$site)]
 
-f2 <-  ggplot(data=tmp2, aes(x=lat,y=maxstrain)) +
-  geom_point(size=2.0, aes(shape=Continent)) +
+f2 <-  ggplot(data=tmp2, aes(x=lat,y=maxstrain,ymin=maxstrain-se,ymax=maxstrain+se)) +
+  geom_pointrange(size=0.5, aes(shape=Continent)) +
   scale_shape_manual(values=c(21,19,17)) +
   geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
   theme_classic() +
@@ -95,11 +103,14 @@ f2 <-  ggplot(data=tmp2, aes(x=lat,y=maxstrain)) +
 # slope
 tmp <- melt(br[!br$Continent=="NorthAmericaWest",c("site","slope_Mpa")])
 tmp2 <- cast(tmp,site~variable,mean,na.rm=T)
+tmp2$sd <- cast(tmp,site~variable,sd,na.rm=T)$slope_Mpa
+tmp2$n <- table(tmp$site)
+tmp2$se <- (tmp2$sd)/sqrt(tmp2$n)
 tmp2$lat <- meta$lat[match(tmp2$site,meta$field_site_code_2015)]
 tmp2$Continent <- br$Continent.short[match(tmp2$site,br$site)]
 
-f3 <-  ggplot(data=tmp2, aes(x=lat,y=slope_Mpa)) +
-  geom_point(size=2.0, aes(shape=Continent)) +
+f3 <-  ggplot(data=tmp2, aes(x=lat,y=slope_Mpa,ymin=slope_Mpa-se,ymax=slope_Mpa+se)) +
+  geom_pointrange(size=0.5, aes(shape=Continent)) +
   scale_shape_manual(values=c(21,19,17)) +
   geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
   theme_classic() +
@@ -113,26 +124,63 @@ dev.off()
 
 ### ### plot 5 - with wNA
 datatypes <- c("peak_force","slope_Mpa","maxstress","maxstrain","auc_modulus")
-f1 <- list()
+
+tmp2 <- list()
 for (i in 1:5)
 {
-tmp <- melt(br[,c(colnames(br)%in%c("site",datatypes[i]))])
-tmp2 <- cast(tmp,site~variable,mean,na.rm=T)
-tmp2$lat <- meta$lat[match(tmp2$site,meta$field_site_code_2015)]
-tmp2$Continent <- br$Continent.short[match(tmp2$site,br$site)]
+  tmp <- melt(br[,c(colnames(br)%in%c("site",datatypes[i]))])
+  tmp2 <- cast(tmp,site~variable,mean,na.rm=T)
+  tmp2$sd <- cast(tmp,site~variable,sd,na.rm=T)[,2]
+  tmp2$n <- table(tmp$site)
+  tmp2$se <- (tmp2$sd)/sqrt(tmp2$n)
+  tmp2$lat <- meta$lat[match(tmp2$site,meta$field_site_code_2015)]
+  tmp2$Continent <- br$Continent.short[match(tmp2$site,br$site)]
 
-f1[[i]] <-  ggplot(data=tmp2,aes(x=tmp2$lat,y=tmp2[,2])) +
-  geom_point(size=2.0, aes(shape=Continent)) +
+dat.out[[i]] <- tmp2
+}
+  
+f1 <- ggplot(data=dat.out[[1]],aes(x=dat.out[[1]]$lat,y=dat.out[[1]][,2],ymin=dat.out[[1]][,2]-dat.out[[1]]$se,ymax=dat.out[[1]][,2]+dat.out[[1]]$se)) +
+  geom_pointrange(size=0.5, aes(shape=Continent)) +
   scale_shape_manual(values=c(21,19,17,15)) +
   geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
   theme_classic() +
-  ylab(datatypes[i]) +
+  ylab(colnames(dat.out[[1]])[2]) +
   xlab("Latitude") 
-}
+
+f2 <- ggplot(data=dat.out[[2]],aes(x=dat.out[[2]]$lat,y=dat.out[[2]][,2],ymin=dat.out[[2]][,2]-dat.out[[2]]$se,ymax=dat.out[[2]][,2]+dat.out[[2]]$se)) +
+  geom_pointrange(size=0.5, aes(shape=Continent)) +
+  scale_shape_manual(values=c(21,19,17,15)) +
+  geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
+  theme_classic() +
+  ylab(colnames(dat.out[[2]])[2]) +
+  xlab("Latitude") 
+
+f3 <- ggplot(data=dat.out[[3]],aes(x=dat.out[[3]]$lat,y=dat.out[[3]][,2],ymin=dat.out[[3]][,2]-dat.out[[3]]$se,ymax=dat.out[[3]][,2]+dat.out[[3]]$se)) +
+  geom_pointrange(size=0.5, aes(shape=Continent)) +
+  scale_shape_manual(values=c(21,19,17,15)) +
+  geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
+  theme_classic() +
+  ylab(colnames(dat.out[[3]])[2]) +
+  xlab("Latitude") 
+
+f4 <- ggplot(data=dat.out[[4]],aes(x=dat.out[[4]]$lat,y=dat.out[[4]][,2],ymin=dat.out[[4]][,2]-dat.out[[4]]$se,ymax=dat.out[[4]][,2]+dat.out[[4]]$se)) +
+  geom_pointrange(size=0.5, aes(shape=Continent)) +
+  scale_shape_manual(values=c(21,19,17,15)) +
+  geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
+  theme_classic() +
+  ylab(colnames(dat.out[[4]])[2]) +
+  xlab("Latitude") 
+
+f5 <- ggplot(data=dat.out[[5]],aes(x=dat.out[[5]]$lat,y=dat.out[[5]][,2],ymin=dat.out[[5]][,2]-dat.out[[5]]$se,ymax=dat.out[[5]][,2]+dat.out[[5]]$se)) +
+  geom_pointrange(size=0.5, aes(shape=Continent)) +
+  scale_shape_manual(values=c(21,19,17,15)) +
+  geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
+  theme_classic() +
+  ylab(colnames(dat.out[[5]])[2]) +
+  xlab("Latitude") 
 
 png('output/MaterialProperties-byLatitude-withWesternNA.png',width=12,height=12,units="in",res=700)
-grid.arrange(f1[[1]],f1[[2]],
-             f1[[3]],f1[[4]],
-             f1[[5]],nrow=3,ncol=2)
+grid.arrange(f1,f2,f3,f4,f5,nrow=3,ncol=2)
+#grid.arrange(f1[[1]],f1[[2]],f1[[3]],f1[[4]],f1[[5]],nrow=3,ncol=2)
 dev.off()
 

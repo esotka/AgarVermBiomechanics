@@ -3,8 +3,10 @@ rm(list=ls())
 library(ggplot2)
 library(lmerTest)
 library(reshape)
+library(gridExtra)
 ### site Metadata
 meta <- read.csv('data/siteMeta.csv')
+meta$Continent <- factor(meta$Continent)
 sink('output/MaterialProperties.byJanSST.txt')
 #####################
 ### breakage data ###
@@ -63,11 +65,14 @@ sink()
 # peak force
 tmp <- melt(br[!br$Continent=="NorthAmericaWest",c("site","peak_force")])
 tmp2 <- cast(tmp,site~variable,mean,na.rm=T)
+tmp2$sd <- cast(tmp,site~variable,sd,na.rm=T)$peak_force
+tmp2$n <- table(tmp$site)
+tmp2$se <- (tmp2$sd)/sqrt(tmp2$n)
 tmp2$JanSST <- meta$JanSST[match(tmp2$site,meta$field_site_code_2015)]
 tmp2$Continent <- br$Continent.short[match(tmp2$site,br$site)]
 
-f1 <-  ggplot(data=tmp2, aes(x=JanSST,y=peak_force)) +
-  geom_point(size=2.0, aes(shape=Continent)) +
+f1 <-  ggplot(data=tmp2, aes(x=JanSST,y=peak_force,ymax=peak_force+se,ymin=peak_force-se)) +
+  geom_pointrange(size=0.5, aes(shape=Continent)) +
   scale_shape_manual(values=c(21,19,17)) +
   geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
   theme_classic() +
@@ -81,11 +86,14 @@ f1 <-  ggplot(data=tmp2, aes(x=JanSST,y=peak_force)) +
 # maxstrain
 tmp <- melt(br[!br$Continent=="NorthAmericaWest",c("site","maxstrain")])
 tmp2 <- cast(tmp,site~variable,mean,na.rm=T)
+tmp2$sd <- cast(tmp,site~variable,sd,na.rm=T)$maxstrain
+tmp2$n <- table(tmp$site)
+tmp2$se <- (tmp2$sd)/sqrt(tmp2$n)
 tmp2$JanSST <- meta$JanSST[match(tmp2$site,meta$field_site_code_2015)]
 tmp2$Continent <- br$Continent.short[match(tmp2$site,br$site)]
 
-f2 <-  ggplot(data=tmp2, aes(x=JanSST,y=maxstrain)) +
-  geom_point(size=2.0, aes(shape=Continent)) +
+f2 <-  ggplot(data=tmp2, aes(x=JanSST,y=maxstrain,ymax=maxstrain+se,ymin=maxstrain-se)) +
+  geom_pointrange(size=0.5, aes(shape=Continent)) +
   scale_shape_manual(values=c(21,19,17)) +
   geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
   theme_classic() +
@@ -96,11 +104,14 @@ f2 <-  ggplot(data=tmp2, aes(x=JanSST,y=maxstrain)) +
 # slope
 tmp <- melt(br[!br$Continent=="NorthAmericaWest",c("site","slope_Mpa")])
 tmp2 <- cast(tmp,site~variable,mean,na.rm=T)
+tmp2$sd <- cast(tmp,site~variable,sd,na.rm=T)$slope_Mpa
+tmp2$n <- table(tmp$site)
+tmp2$se <- (tmp2$sd)/sqrt(tmp2$n)
 tmp2$JanSST <- meta$JanSST[match(tmp2$site,meta$field_site_code_2015)]
 tmp2$Continent <- br$Continent.short[match(tmp2$site,br$site)]
 
-f3 <-  ggplot(data=tmp2, aes(x=JanSST,y=slope_Mpa)) +
-  geom_point(size=2.0, aes(shape=Continent)) +
+f3 <-  ggplot(data=tmp2, aes(x=JanSST,y=slope_Mpa,ymax=slope_Mpa+se,ymin=slope_Mpa-se)) +
+  geom_pointrange(size=0.5, aes(shape=Continent)) +
   scale_shape_manual(values=c(21,19,17)) +
   geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
   theme_classic() +

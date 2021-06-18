@@ -162,10 +162,14 @@ sink()
 
 ### breakage
 tmp <- melt(br[,c("site","natnon","attach3","peak_force")])
+tmp$site_attach <- paste(tmp$site,tmp$attach3)
 tmp2 <- cast(tmp,site+natnon+attach3~variable,mean,na.rm=T)
-f1 <- ggplot(tmp2,aes(y=peak_force,x=natnon,fill=attach3)) +
+tmp2$sd <- cast(tmp,site+natnon+attach3~variable,sd,na.rm=T)$peak_force
+tmp2$n <- table(tmp$site_attach)
+tmp2$se <- (tmp2$sd)/sqrt(tmp2$n)
+f1 <- ggplot(tmp2,aes(y=peak_force,x=natnon,fill=attach3,ymin=peak_force-se,ymax=peak_force+se)) +
   geom_boxplot() +
-  geom_point(pch = 21, position = position_jitterdodge(jitter.width=0.1)) +
+  geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) +
   scale_fill_manual(values=c("white","grey")) +
   ylab("peak force") + xlab("") +
   guides(fill=FALSE) +
@@ -173,21 +177,29 @@ f1 <- ggplot(tmp2,aes(y=peak_force,x=natnon,fill=attach3)) +
 
 ### slope
 tmp <- melt(br[,c("site","natnon","attach3","slope_Mpa")])
+tmp$site_attach <- paste(tmp$site,tmp$attach3)
 tmp2 <- cast(tmp,site+natnon+attach3~variable,mean,na.rm=T)
-f2 <- ggplot(tmp2,aes(y=slope_Mpa,x=natnon,fill=attach3)) +
+tmp2$sd <- cast(tmp,site+natnon+attach3~variable,sd,na.rm=T)$slope_Mpa
+tmp2$n <- table(tmp$site_attach)
+tmp2$se <- (tmp2$sd)/sqrt(tmp2$n)
+f2 <- ggplot(tmp2,aes(y=slope_Mpa,x=natnon,fill=attach3,ymin=slope_Mpa-se,ymax=slope_Mpa+se)) +
   geom_boxplot() +
-  geom_point(pch = 21, position = position_jitterdodge(jitter.width=0.1)) +
-  scale_fill_manual(values=c("white","grey")) +
+  geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) +scale_fill_manual(values=c("white","grey")) +
   ylab("Slope") + xlab("") +
   guides(fill=FALSE) +
   theme_classic()
 
 ### maxstress
 tmp <- melt(br[,c("site","natnon","attach3","maxstress")])
+tmp$site_attach <- paste(tmp$site,tmp$attach3)
 tmp2 <- cast(tmp,site+natnon+attach3~variable,mean,na.rm=T)
-f3 <- ggplot(tmp2,aes(y=maxstress,x=natnon,fill=attach3)) +
+tmp2$sd <- cast(tmp,site+natnon+attach3~variable,sd,na.rm=T)$maxstress
+tmp2$n <- table(tmp$site_attach)
+tmp2$se <- (tmp2$sd)/sqrt(tmp2$n)
+
+f3 <- ggplot(tmp2,aes(y=maxstress,x=natnon,fill=attach3,ymin=maxstress-se,ymax=maxstress+se)) +
   geom_boxplot() +
-  geom_point(pch = 21, position = position_jitterdodge(jitter.width=0.1)) +
+  geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) +scale_fill_manual(values=c("white","grey")) +
   scale_fill_manual(values=c("white","grey")) +
   ylab("Max Stress") + xlab("") +
   guides(fill=FALSE) +
@@ -195,10 +207,16 @@ f3 <- ggplot(tmp2,aes(y=maxstress,x=natnon,fill=attach3)) +
 
 ### maxstrain
 tmp <- melt(br[,c("site","natnon","attach3","maxstrain")])
+tmp$site_attach <- paste(tmp$site,tmp$attach3)
 tmp2 <- cast(tmp,site+natnon+attach3~variable,mean,na.rm=T)
-f4 <- ggplot(tmp2,aes(y=maxstrain,x=natnon,fill=attach3)) +
+tmp2$sd <- cast(tmp,site+natnon+attach3~variable,sd,na.rm=T)$maxstrain
+tmp2$n <- table(tmp$site_attach)
+tmp2$se <- (tmp2$sd)/sqrt(tmp2$n)
+
+
+f4 <- ggplot(tmp2,aes(y=maxstrain,x=natnon,fill=attach3,ymin=maxstrain-se,ymax=maxstrain+se)) +
   geom_boxplot(outlier.shape=NA) + 
-  geom_point(pch = 21, position = position_jitterdodge(jitter.width=0.1)) +
+  geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) +scale_fill_manual(values=c("white","grey")) +
   scale_fill_manual(values=c("white","grey")) +
   ylab("Max Strain") + xlab("") +
   guides(fill=FALSE) +
@@ -207,10 +225,15 @@ f4 <- ggplot(tmp2,aes(y=maxstrain,x=natnon,fill=attach3)) +
 
 ### auc_modulus
 tmp <- melt(br[,c("site","natnon","attach3","auc_modulus")])
+tmp$site_attach <- paste(tmp$site,tmp$attach3)
 tmp2 <- cast(tmp,site+natnon+attach3~variable,mean,na.rm=T)
-f5 <- ggplot(tmp2,aes(y=auc_modulus,x=natnon,fill=attach3)) +
+tmp2$sd <- cast(tmp,site+natnon+attach3~variable,sd,na.rm=T)$auc_modulus
+tmp2$n <- table(tmp$site_attach)
+tmp2$se <- (tmp2$sd)/sqrt(tmp2$n)
+
+f5 <- ggplot(tmp2,aes(y=auc_modulus,x=natnon,fill=attach3,ymin=auc_modulus-se,ymax=auc_modulus+se)) +
   geom_boxplot(outlier.shape=NA) + 
-  geom_point(pch = 21, position = position_jitterdodge(jitter.width=0.1)) +
+  geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) +scale_fill_manual(values=c("white","grey")) +
   scale_fill_manual(values=c("white","grey")) +
   ylab("AUC") + xlab("") +
   guides(fill=FALSE) +

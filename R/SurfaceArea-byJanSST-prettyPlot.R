@@ -7,6 +7,7 @@ library(reshape)
 library(gridExtra)
 ### site Metadata
 meta <- read.csv('data/siteMeta.csv')
+meta$Continent <- factor(meta$Continent)
 metatmp <- data.frame(long=levels(meta$Continent)[c(2,4,3,1)],short=c("Japan","wNA","eNA","Europe"))
 
 ########################
@@ -44,11 +45,14 @@ print(summary(m)$coefficients); print(anova(m))
 tmp <- arch[arch$Surfacearea=="Y" & ! arch$Continent.short=="wNA",]
 tmp <- melt(tmp[,c("site","natnon","Continent.short","sumprojarea")])
 tmp2 <- cast(tmp,site+natnon+Continent.short~variable,mean,na.rm=T)
+tmp2$sd <- cast(tmp,site~variable,sd,na.rm=T)$sumprojarea
+tmp2$n <- table(tmp$site)
+tmp2$se <- (tmp2$sd)/sqrt(tmp2$n)
 tmp2$janSST <- meta$JanSST[match(tmp2$site,meta$field_site_code_2015)]
 
 
-f1 <-  ggplot(data=tmp2, aes(x=janSST,y=sumprojarea)) +
-  geom_point(size=2.0, aes(shape=Continent.short)) +
+f1 <-  ggplot(data=tmp2, aes(x=janSST,y=sumprojarea,ymax=sumprojarea+se,ymin=sumprojarea-se)) +
+  geom_pointrange(size=0.5, aes(shape=Continent.short)) +
   scale_shape_manual(values=c(21,19,17)) +
   geom_smooth(method=lm,aes(linetype=Continent.short),size=.5,color="black") +
   theme_classic() +

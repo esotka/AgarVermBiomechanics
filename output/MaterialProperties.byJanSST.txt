@@ -1,155 +1,275 @@
 lmer(formula = peak_force ~ Continent.short * JanSST + (1 | site), 
     data = br[!br$Continent == "NorthAmericaWest", ])
-                                Estimate Std. Error       df    t value     Pr(>|t|)
-(Intercept)                   1.69337316 0.23192067 29.31404  7.3015190 4.531378e-08
-Continent.shorteNA            0.21927033 0.35623146 29.11948  0.6155277 5.429876e-01
-Continent.shortEurope         1.50050910 0.39143344 29.89910  3.8333697 6.048050e-04
-JanSST                       -0.04704642 0.01748404 29.84409 -2.6908205 1.156173e-02
-Continent.shorteNA:JanSST    -0.01057559 0.03464380 29.07559 -0.3052664 7.623380e-01
-Continent.shortEurope:JanSST -0.13050727 0.03438492 30.94572 -3.7954793 6.440384e-04
+                [1] "architecture data"
+[1] "all thalli"
+            
+             attach drift
+  Japan         114    18
+  Non-native     50   184
+lmer(formula = log(tmp$sumprojarea) ~ natnon + attachment.status2 + 
+    (1 | site), data = tmp)
+                          Estimate Std. Error        df   t value
+(Intercept)              3.3521318  0.1645057  37.71038 20.376991
+natnonNon-native         0.4893566  0.2309787  49.66774  2.118623
+attachment.status2drift -0.1576498  0.1520870 299.14977 -1.036577
+                            Pr(>|t|)
+(Intercept)             5.931699e-22
+natnonNon-native        3.914734e-02
+attachment.status2drift 3.007702e-01
 Type III Analysis of Variance Table with Satterthwaite's method
-                        Sum Sq Mean Sq NumDF  DenDF F value   Pr(>F)    
-Continent.short         5.5482  2.7741     2 29.539  7.7850 0.001925 ** 
-JanSST                 13.6662 13.6662     1 30.003 38.3515 8.14e-07 ***
-Continent.short:JanSST  5.3039  2.6520     2 29.999  7.4422 0.002374 ** 
+                    Sum Sq Mean Sq NumDF   DenDF F value  Pr(>F)  
+natnon             2.11981 2.11981     1  49.668  4.4886 0.03915 *
+attachment.status2 0.50745 0.50745     1 299.150  1.0745 0.30077  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-lmer(formula = maxstress ~ Continent.short * JanSST + (1 | site), 
-    data = br[!br$Continent == "NorthAmericaWest", ])
-                                 Estimate Std. Error       df     t value    Pr(>|t|)
-(Intercept)                   0.835679948 0.22929321 28.78613  3.64459093 0.001048428
-Continent.shorteNA            0.033167867 0.35184866 28.51684  0.09426743 0.925555977
-Continent.shortEurope         0.461537963 0.38817049 29.67503  1.18900837 0.243864105
-JanSST                        0.036190405 0.01733236 29.55452  2.08802579 0.045517952
-Continent.shorteNA:JanSST     0.002103652 0.03420909 28.44307  0.06149396 0.951395908
-Continent.shortEurope:JanSST -0.024127285 0.03427442 31.27092 -0.70394431 0.486676716
+[1] "all thalli"
+            
+             attach drift
+  Japan         114    18
+  Non-native     50   184
+lmer(formula = log(tmp$sumprojarea) ~ natnon + attachment.status2 + 
+    (1 | site), data = tmp)
+                          Estimate Std. Error        df   t value
+(Intercept)              3.3521318  0.1645057  37.71038 20.376991
+natnonNon-native         0.4893566  0.2309787  49.66774  2.118623
+attachment.status2drift -0.1576498  0.1520870 299.14977 -1.036577
+                            Pr(>|t|)
+(Intercept)             5.931699e-22
+natnonNon-native        3.914734e-02
+attachment.status2drift 3.007702e-01
 Type III Analysis of Variance Table with Satterthwaite's method
-                        Sum Sq Mean Sq NumDF  DenDF F value  Pr(>F)  
-Continent.short        0.89351 0.44675     2 29.140  0.7844 0.46579  
-JanSST                 2.08657 2.08657     1 29.848  3.6636 0.06525 .
-Continent.short:JanSST 0.31789 0.15894     2 29.826  0.2791 0.75844  
+                    Sum Sq Mean Sq NumDF   DenDF F value  Pr(>F)  
+natnon             2.11981 2.11981     1  49.668  4.4886 0.03915 *
+attachment.status2 0.50745 0.50745     1 299.150  1.0745 0.30077  
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-lmer(formula = maxstrain ~ Continent.short * JanSST + (1 | site), 
-    data = br[!br$Continent == "NorthAmericaWest", ])
-                                 Estimate  Std. Error       df    t value     Pr(>|t|)
-(Intercept)                   0.299553462 0.043254717 29.31347  6.9253363 1.230799e-07
-Continent.shorteNA           -0.032053520 0.066491322 29.19428 -0.4820707 6.333502e-01
-Continent.shortEurope        -0.027287616 0.072841160 29.65315 -0.3746181 7.106104e-01
-JanSST                       -0.003417776 0.003254131 29.63301 -1.0502886 3.020758e-01
-Continent.shorteNA:JanSST    -0.004273717 0.006467383 29.17185 -0.6608108 5.139188e-01
-Continent.shortEurope:JanSST -0.002833874 0.006373840 30.25770 -0.4446102 6.597656e-01
-Type III Analysis of Variance Table with Satterthwaite's method
-                          Sum Sq   Mean Sq NumDF  DenDF F value  Pr(>F)  
-Continent.short        0.0018847 0.0009424     2 29.442  0.1371 0.87248  
-JanSST                 0.0288376 0.0288376     1 29.709  4.1941 0.04949 *
-Continent.short:JanSST 0.0035586 0.0017793     2 29.713  0.2588 0.77372  
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-lmer(formula = slope_Mpa ~ Continent.short * JanSST + (1 | site), 
-    data = br[!br$Continent == "NorthAmericaWest", ])
-                               Estimate Std. Error       df    t value    Pr(>|t|)
-(Intercept)                   3.1897806 1.10242830 28.43469  2.8934132 0.007238140
-Continent.shorteNA            0.6127820 1.69191753 28.17881  0.3621820 0.719918209
-Continent.shortEurope         4.5191924 1.86542432 29.26571  2.4226083 0.021823468
-JanSST                        0.3010450 0.08329889 29.15811  3.6140337 0.001121752
-Continent.shorteNA:JanSST     0.1433170 0.16450620 28.11061  0.8711950 0.391027457
-Continent.shortEurope:JanSST -0.1636392 0.16458116 30.75736 -0.9942765 0.327846537
-Type III Analysis of Variance Table with Satterthwaite's method
-                        Sum Sq Mean Sq NumDF  DenDF F value  Pr(>F)    
-Continent.short         77.204  38.602     2 28.764  3.1257 0.05911 .  
-JanSST                 203.872 203.872     1 29.425 16.5081 0.00033 ***
-Continent.short:JanSST  28.968  14.484     2 29.407  1.1728 0.32356    
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-lmer(formula = auc_modulus ~ Continent.short * JanSST + (1 | 
-    site), data = br[!br$Continent == "NorthAmericaWest", ])
-                                 Estimate  Std. Error       df     t value    Pr(>|t|)
-(Intercept)                   0.124897656 0.042005340 27.58143  2.97337564 0.006053703
-Continent.shorteNA            0.003686925 0.064463631 27.32992  0.05719388 0.954806872
-Continent.shortEurope         0.010757291 0.071087067 28.40211  0.15132557 0.880788625
-JanSST                        0.003624772 0.003174276 28.29439  1.14192096 0.263058929
-Continent.shorteNA:JanSST    -0.004121272 0.006267767 27.26235 -0.65753428 0.516351155
-Continent.shortEurope:JanSST -0.002238950 0.006273251 29.87549 -0.35690427 0.723672134
-Type III Analysis of Variance Table with Satterthwaite's method
-                          Sum Sq   Mean Sq NumDF  DenDF F value Pr(>F)
-Continent.short        0.0004184 0.0002092     2 27.907  0.0115 0.9886
-JanSST                 0.0054298 0.0054298     1 28.560  0.2972 0.5899
-Continent.short:JanSST 0.0085930 0.0042965     2 28.541  0.2352 0.7920
-[1] "only tetrasporophytes"
-lmer(formula = peak_force ~ Continent.short * JanSST + (1 | site), 
-    data = br2[!br2$Continent == "NorthAmericaWest", ])
-                                Estimate Std. Error       df    t value     Pr(>|t|)
-(Intercept)                   1.77424314 0.22047617 22.39017  8.0473239 4.711381e-08
-Continent.shorteNA            0.12376905 0.35777706 25.85003  0.3459390 7.321883e-01
-Continent.shortEurope         1.58731062 0.36686863 23.23687  4.3266458 2.446271e-04
-JanSST                       -0.05163754 0.01644343 23.57052 -3.1403140 4.499009e-03
-Continent.shorteNA:JanSST    -0.01158355 0.03793270 30.84569 -0.3053712 7.621347e-01
-Continent.shortEurope:JanSST -0.13896955 0.03253165 25.44876 -4.2718264 2.382345e-04
-Type III Analysis of Variance Table with Satterthwaite's method
-                        Sum Sq Mean Sq NumDF  DenDF F value    Pr(>F)    
-Continent.short         8.1237  4.0619     2 24.837 10.2746 0.0005604 ***
-JanSST                 16.5654 16.5654     1 29.050 41.9027 4.351e-07 ***
-Continent.short:JanSST  7.3793  3.6897     2 28.205  9.3331 0.0007749 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-lmer(formula = maxstress ~ Continent.short * JanSST + (1 | site), 
-    data = br2[!br2$Continent == "NorthAmericaWest", ])
-                                 Estimate Std. Error       df     t value     Pr(>|t|)
-(Intercept)                   0.913586121 0.20371036 17.95172  4.48473088 0.0002882306
-Continent.shorteNA           -0.020227795 0.33380035 20.83839 -0.06059848 0.9522564114
-Continent.shortEurope         0.502018990 0.34002408 18.96128  1.47642189 0.1562461420
-JanSST                        0.025826551 0.01525834 19.37808  1.69261903 0.1065448819
-Continent.shorteNA:JanSST    -0.003759298 0.03577288 24.75880 -0.10508793 0.9171527763
-Continent.shortEurope:JanSST -0.023280077 0.03035541 21.29222 -0.76691681 0.4515514179
-Type III Analysis of Variance Table with Satterthwaite's method
-                        Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
-Continent.short        1.15545 0.57772     2 20.173  1.2980 0.2949
-JanSST                 0.57532 0.57532     1 23.739  1.2926 0.2669
-Continent.short:JanSST 0.26343 0.13172     2 23.122  0.2959 0.7466
-lmer(formula = maxstrain ~ Continent.short * JanSST + (1 | site), 
-    data = br2[!br2$Continent == "NorthAmericaWest", ])
-                                 Estimate  Std. Error       df    t value     Pr(>|t|)
-(Intercept)                   0.306196560 0.043192130 26.00301  7.0891748 1.577199e-07
-Continent.shorteNA           -0.036328534 0.068669160 29.12253 -0.5290371 6.007892e-01
-Continent.shortEurope        -0.024379938 0.071647818 26.09464 -0.3402747 7.363738e-01
-JanSST                       -0.003594899 0.003206753 26.23145 -1.1210403 2.724291e-01
-Continent.shorteNA:JanSST    -0.004388457 0.007097967 34.32855 -0.6182696 5.404784e-01
-Continent.shortEurope:JanSST -0.003406707 0.006286374 27.33389 -0.5419192 5.922649e-01
-Type III Analysis of Variance Table with Satterthwaite's method
-                         Sum Sq  Mean Sq NumDF  DenDF F value  Pr(>F)  
-Continent.short        0.002398 0.001199     2 27.810  0.1513 0.86026  
-JanSST                 0.034358 0.034358     1 31.666  4.3359 0.04548 *
-Continent.short:JanSST 0.004364 0.002182     2 30.809  0.2754 0.76114  
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-lmer(formula = slope_Mpa ~ Continent.short * JanSST + (1 | site), 
-    data = br2[!br2$Continent == "NorthAmericaWest", ])
-                                Estimate Std. Error       df    t value    Pr(>|t|)
-(Intercept)                   3.45465518 0.97752809 19.38871  3.5340725 0.002163113
-Continent.shorteNA            0.80220920 1.60057667 22.49206  0.5012001 0.621100347
-Continent.shortEurope         4.75630251 1.63119090 20.44749  2.9158466 0.008415256
-JanSST                        0.24511308 0.07319058 20.88188  3.3489702 0.003058248
-Continent.shorteNA:JanSST     0.06704975 0.17139299 26.72238  0.3912047 0.698747825
-Continent.shortEurope:JanSST -0.18648982 0.14554051 22.90684 -1.2813602 0.212887074
-Type III Analysis of Variance Table with Satterthwaite's method
-                       Sum Sq Mean Sq NumDF  DenDF F value   Pr(>F)   
-Continent.short        89.025  44.512     2 21.762  4.4360 0.024217 * 
-JanSST                 84.209  84.209     1 25.587  8.3922 0.007619 **
-Continent.short:JanSST 21.146  10.573     2 24.915  1.0537 0.363671   
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-lmer(formula = auc_modulus ~ Continent.short * JanSST + (1 | 
-    site), data = br2[!br2$Continent == "NorthAmericaWest", ])
-                                 Estimate  Std. Error       df     t value    Pr(>|t|)
-(Intercept)                   0.137805892 0.042017543 20.97286  3.27972278 0.003579433
-Continent.shorteNA           -0.002368803 0.068637370 24.30361 -0.03451185 0.972750881
-Continent.shortEurope         0.006199034 0.070056372 22.02181  0.08848636 0.930289895
-JanSST                        0.002599810 0.003142387 22.44491  0.82733620 0.416756377
-Continent.shorteNA:JanSST    -0.005524173 0.007331191 28.90887 -0.75351653 0.457233072
-Continent.shortEurope:JanSST -0.001402061 0.006239925 24.51449 -0.22469188 0.824081329
-Type III Analysis of Variance Table with Satterthwaite's method
-                          Sum Sq   Mean Sq NumDF  DenDF F value Pr(>F)
-Continent.short        0.0002259 0.0001129     2 23.468  0.0065 0.9935
-JanSST                 0.0001598 0.0001598     1 27.554  0.0092 0.9242
-Continent.short:JanSST 0.0099226 0.0049613     2 26.806  0.2859 0.7536
+  site     natnon attachment.status2 sumprojarea
+1  aka      Japan             attach    43.16667
+2  aka      Japan              drift     8.99690
+3  bob Non-native              drift    45.06905
+4  cfj Non-native              drift    65.25179
+5  cnt      Japan             attach   177.10852
+6  dhd Non-native             attach    58.43919
+    X Individual_ID StacyLifehistory attachment.status Reproductive
+1   1        AKA_50  Tetrasporophyte            pebble          Yes
+2   2       AKA_146  Tetrasporophyte             Drift          Yes
+3   3        AKA_39  Tetrasporophyte         gastropod          Yes
+4   4       AKA_192  Tetrasporophyte            pebble          Yes
+5   5        AKA_48  Tetrasporophyte            pebble          Yes
+6   6       AKA_47A  Tetrasporophyte            pebble          Yes
+7   7        AKA_42  Tetrasporophyte              rock          Yes
+18 18        BOB_97  Tetrasporophyte             Drift          Yes
+19 19        BOB_44  Tetrasporophyte             Drift          Yes
+20 20        BOB_48  Tetrasporophyte             Drift          Yes
+21 21        BOB_14  Tetrasporophyte             Drift          Yes
+22 22        BOB_55  Tetrasporophyte             Drift          Yes
+23 23        BOB_20       Vegetative             Drift           No
+24 24        BOB_17  Tetrasporophyte             Drift          Yes
+25 25        BOB_02  Tetrasporophyte             Drift          Yes
+26 26        BOB_52       Vegetative             Drift           No
+27 27        BOB_10  Tetrasporophyte             Drift          Yes
+38 38        CFJ_40  Tetrasporophyte          Diopatra          Yes
+39 39        CFJ_07  Tetrasporophyte             Drift          Yes
+40 40        CFJ_03  Tetrasporophyte          Diopatra          Yes
+41 41        CFJ_67  Tetrasporophyte          Diopatra          Yes
+42 42        CFJ_25  Tetrasporophyte          Diopatra          Yes
+44 44        CFJ_44  Tetrasporophyte          Diopatra          Yes
+45 45        CFJ_29  Tetrasporophyte          Diopatra          Yes
+46 46        CFJ_53  Tetrasporophyte          Diopatra          Yes
+47 47        CNT_20       Vegetative      large stones           No
+48 48        CNT_10       Vegetative      large stones          Yes
+49 49        CNT_05       Vegetative      large stones           No
+50 50        CNT_18       Vegetative      large stones          Yes
+51 51        CNT_30       Vegetative         hard rock          Yes
+52 52        CNT_65       Vegetative         hard rock          Yes
+53 53        CNT_26       Vegetative         hard rock          Yes
+54 54        CNT_60       Vegetative         hard rock          Yes
+55 55        CNT_50       Vegetative         hard rock          Yes
+56 56        CNT_59       Vegetative         hard rock          Yes
+57 57        DHD_51  Tetrasporophyte          Attached          Yes
+58 58        DHD_15  Tetrasporophyte             Drift          Yes
+59 59        DHD_29  Tetrasporophyte          Attached          Yes
+60 60        DHD_18  Tetrasporophyte             Drift          Yes
+61 61        DHD_90  Tetrasporophyte          Attached          Yes
+62 62        DHD_22  Tetrasporophyte             Drift          Yes
+63 63        DHD_39  Tetrasporophyte          Attached          Yes
+64 64        DHD_97  Tetrasporophyte          Attached          Yes
+65 65        DHD_78  Tetrasporophyte          Attached          Yes
+66 66        DHD_82  Tetrasporophyte          Attached          Yes
+67 67        DHD_85  Tetrasporophyte          Attached          Yes
+68 68        DHH_36  Tetrasporophyte             Drift           No
+   countimages sumlength Length sumprojarea sumsurfarea Surfacearea
+1            1   72.7461      Y      6.9115     21.7131           Y
+2            1   75.6438      Y      8.9969     28.2647           Y
+3            2  222.7858      Y     26.2810     82.5643           Y
+4            2  273.2167      Y     28.7183     90.2211           Y
+5            3  449.6120      Y     44.3445    139.3122           Y
+6            3  514.7655      Y     54.3873    170.8629           Y
+7            5  888.8756      Y     98.3574    308.9989           Y
+18           1  191.0165      N     19.4873     61.2212           Y
+19           1  201.5952      Y     20.8436     65.4820           Y
+20           1  259.5691      Y     25.6397     80.5495           Y
+21           1  286.3874      N     36.7393    115.4201           Y
+22           1  409.2168      Y     42.1219    132.3297           Y
+23           1  686.3062      N     46.3899    145.7382           Y
+24           1  417.6016      N     50.0352    157.1903           Y
+25           1  615.9556      N     52.6508    165.4074           Y
+26           1  357.3050      N     56.5569    177.6786           Y
+27           1  379.1342      N    100.2259    314.8690           Y
+38           4  393.0734      Y     28.1515     88.4410           Y
+39           5  569.4264      N     36.4874    114.6286           Y
+40           6  677.1794      Y     36.8117    115.6472           Y
+41          10  748.5637      N     56.1264    176.3257           Y
+42           9  861.2844      N     59.7076    187.5770           Y
+44          12 1203.2331      N     89.4411    280.9877           Y
+45          13 1521.1125      N     94.6967    297.4981           Y
+46          15 1636.5003      Y    120.5919    378.8507           Y
+47           1  240.2093      Y     20.2871     63.7337           Y
+48           1  203.5695      N     21.0164     66.0250           Y
+49           1  356.7099      N     37.1443    116.6923           Y
+50           4  974.0942      N    109.1757    342.9855           Y
+51           4 1328.8801      N    162.4662    510.4026           Y
+52           6 1883.9338      N    165.3817    519.5620           Y
+53           6 1885.6584      N    166.3035    522.4578           Y
+54           6 2241.2524      N    316.9735    995.8017           Y
+55           6 1950.1918      N    322.0106   1011.6264           Y
+56          10 3735.3234      N    450.3262   1414.7411           Y
+57           2  175.4830      Y     17.5957     55.2785           Y
+58           1  196.8242      N     20.9617     65.8530           Y
+59           3  318.8571      N     28.0208     88.0298           Y
+60           1  226.0050      N     28.8420     90.6097           Y
+61           1  289.0421      Y     31.5002     98.9609           Y
+62           2  299.2527      N     32.4595    101.9746           Y
+63           2  535.8116      Y     55.8907    175.5858           Y
+64           3  855.1214      N     61.3840    192.8433           Y
+65           3  737.3709      N     77.5107    243.5071           Y
+66           6 1134.7786      N     96.2256    302.3017           Y
+67           7 1094.2546      Y     99.3858    312.2299           Y
+68           1  143.8553      Y     10.6602     33.4901           Y
+   sumavediam Diameter sumrtvol Volume site  Continent attachment.status2
+1      0.9501        Y    0.516      Y  aka      Japan             attach
+2      1.1894        Y    0.840      Y  aka      Japan              drift
+3      2.3650        Y    2.435      Y  aka      Japan             attach
+4      2.0959        Y    2.378      Y  aka      Japan             attach
+5      2.9955        Y    3.437      Y  aka      Japan             attach
+6      3.2353        Y    4.544      Y  aka      Japan             attach
+7      5.5380        Y    8.553      Y  aka      Japan             attach
+18     1.0202        N    1.561      N  bob Western NA              drift
+19     1.0339        N    1.693      N  bob Western NA              drift
+20     0.9878        N    1.989      N  bob Western NA              drift
+21     1.2829        N    3.702      N  bob Western NA              drift
+22     1.0293        Y    3.405      Y  bob Western NA              drift
+23     0.6759        N    2.463      N  bob Western NA              drift
+24     1.1982        N    4.708      N  bob Western NA              drift
+25     0.8548        N    3.535      N  bob Western NA              drift
+26     1.5829        N    7.031      N  bob Western NA              drift
+27     2.6435        N   20.809      N  bob Western NA              drift
+38     2.7977        Y    1.599      Y  cfj Eastern NA              drift
+39     3.1572        N    1.847      N  cfj Eastern NA              drift
+40     3.2492        Y    1.580      Y  cfj Eastern NA              drift
+41     7.4707        N    3.327      N  cfj Eastern NA              drift
+42     6.1993        N    3.297      N  cfj Eastern NA              drift
+44     8.8322        N    5.287      N  cfj Eastern NA              drift
+45     8.0104        N    4.655      N  cfj Eastern NA              drift
+46    11.2421        Y    7.019      Y  cfj Eastern NA              drift
+47     0.8446        Y    1.346      Y  cnt      Japan             attach
+48     1.0324        N    1.704      N  cnt      Japan             attach
+49     1.0413        N    3.038      N  cnt      Japan             attach
+50     4.1131        N    9.859      N  cnt      Japan             attach
+51     4.8642        N   15.926      N  cnt      Japan             attach
+52     5.2828        N   11.502      N  cnt      Japan             attach
+53     5.1066        N   11.669      N  cnt      Japan             attach
+54     8.0131        N   37.087      N  cnt      Japan             attach
+55    10.0910        N   44.888      N  cnt      Japan             attach
+56    11.9730        N   45.517      N  cnt      Japan             attach
+57     1.9793        Y    1.387      Y  dhd     Europe             attach
+58     1.0650        N    1.753      N  dhd     Europe              drift
+59     2.6772        N    1.949      N  dhd     Europe             attach
+60     1.2762        N    2.891      N  dhd     Europe              drift
+61     1.0898        Y    2.696      Y  dhd     Europe             attach
+62     2.1799        N    2.771      N  dhd     Europe              drift
+63     2.0705        Y    4.609      Y  dhd     Europe             attach
+64     2.1663        N    3.517      N  dhd     Europe             attach
+65     3.0992        N    6.452      N  dhd     Europe             attach
+66     5.1783        N    6.564      N  dhd     Europe             attach
+67     6.3309        Y    7.122      Y  dhd     Europe             attach
+68     0.7410        Y    0.620      Y  dhh     Europe              drift
+       natnon latitude    JanSST
+1       Japan 43.02513  2.974885
+2       Japan 43.02513  2.974885
+3       Japan 43.02513  2.974885
+4       Japan 43.02513  2.974885
+5       Japan 43.02513  2.974885
+6       Japan 43.02513  2.974885
+7       Japan 43.02513  2.974885
+18 Non-native 38.31777 11.310875
+19 Non-native 38.31777 11.310875
+20 Non-native 38.31777 11.310875
+21 Non-native 38.31777 11.310875
+22 Non-native 38.31777 11.310875
+23 Non-native 38.31777 11.310875
+24 Non-native 38.31777 11.310875
+25 Non-native 38.31777 11.310875
+26 Non-native 38.31777 11.310875
+27 Non-native 38.31777 11.310875
+38 Non-native 32.75115 14.135073
+39 Non-native 32.75115 14.135073
+40 Non-native 32.75115 14.135073
+41 Non-native 32.75115 14.135073
+42 Non-native 32.75115 14.135073
+44 Non-native 32.75115 14.135073
+45 Non-native 32.75115 14.135073
+46 Non-native 32.75115 14.135073
+47      Japan 35.70100 16.981661
+48      Japan 35.70100 16.981661
+49      Japan 35.70100 16.981661
+50      Japan 35.70100 16.981661
+51      Japan 35.70100 16.981661
+52      Japan 35.70100 16.981661
+53      Japan 35.70100 16.981661
+54      Japan 35.70100 16.981661
+55      Japan 35.70100 16.981661
+56      Japan 35.70100 16.981661
+57 Non-native 54.36382  4.331797
+58 Non-native 54.36382  4.331797
+59 Non-native 54.36382  4.331797
+60 Non-native 54.36382  4.331797
+61 Non-native 54.36382  4.331797
+62 Non-native 54.36382  4.331797
+63 Non-native 54.36382  4.331797
+64 Non-native 54.36382  4.331797
+65 Non-native 54.36382  4.331797
+66 Non-native 54.36382  4.331797
+67 Non-native 54.36382  4.331797
+68 Non-native 54.38023  4.213462
+ [ reached 'max' / getOption("max.print") -- omitted 319 rows ]
+  X Individual_ID StacyLifehistory attachment.status Reproductive
+1 1        AKA_50  Tetrasporophyte            pebble          Yes
+2 2       AKA_146  Tetrasporophyte             Drift          Yes
+3 3        AKA_39  Tetrasporophyte         gastropod          Yes
+4 4       AKA_192  Tetrasporophyte            pebble          Yes
+5 5        AKA_48  Tetrasporophyte            pebble          Yes
+6 6       AKA_47A  Tetrasporophyte            pebble          Yes
+  countimages sumlength Length sumprojarea sumsurfarea Surfacearea
+1           1   72.7461      Y      6.9115     21.7131           Y
+2           1   75.6438      Y      8.9969     28.2647           Y
+3           2  222.7858      Y     26.2810     82.5643           Y
+4           2  273.2167      Y     28.7183     90.2211           Y
+5           3  449.6120      Y     44.3445    139.3122           Y
+6           3  514.7655      Y     54.3873    170.8629           Y
+  sumavediam Diameter sumrtvol Volume site Continent attachment.status2
+1     0.9501        Y    0.516      Y  aka     Japan             attach
+2     1.1894        Y    0.840      Y  aka     Japan              drift
+3     2.3650        Y    2.435      Y  aka     Japan             attach
+4     2.0959        Y    2.378      Y  aka     Japan             attach
+5     2.9955        Y    3.437      Y  aka     Japan             attach
+6     3.2353        Y    4.544      Y  aka     Japan             attach
+  natnon latitude   JanSST
+1  Japan 43.02513 2.974885
+2  Japan 43.02513 2.974885
+3  Japan 43.02513 2.974885
+4  Japan 43.02513 2.974885
+5  Japan 43.02513 2.974885
+6  Japan 43.02513 2.974885
+null device 
+          1 

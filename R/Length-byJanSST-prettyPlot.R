@@ -8,6 +8,7 @@ library(gridExtra)
 library(visreg)
 ### site Metadata
 meta <- read.csv('data/siteMeta.csv')
+meta$Continent <- factor(meta$Continent)
 metatmp <- data.frame(long=levels(meta$Continent)[c(2,4,3,1)],short=c("Japan","wNA","eNA","Europe"))
 
 ########################
