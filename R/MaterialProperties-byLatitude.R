@@ -71,16 +71,17 @@ tmp2$Continent <- br$Continent.short[match(tmp2$site,br$site)]
 
 f1 <-  ggplot(data=tmp2, aes(x=lat,y=peak_force,ymin=peak_force-se,ymax=peak_force+se)) +
     geom_pointrange(size=0.5, aes(shape=Continent)) +
-    scale_fill_manual(values=c("white","grey")) +
-    scale_shape_manual(values=c(21,19,17)) +
-    geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
-    theme_classic() +
+  scale_fill_manual(values=c("black","red","darkred")) +
+  scale_shape_manual(values=c(21,19,17)) +
+  geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
+  theme_classic() +
     ylab("peak breakage force N (mean)") +
     xlab("Latitude") +
-    theme(legend.position = "none") +
-    annotate(geom = "text", x = 34.5, y = c(3,2.7,2.4), label = c("Japan","Eastern NA","Europe"),hjust = 0) +
-    annotate(geom="pointrange",x=33,y=c(3,2.7,2.4),ymin=0,ymax=0,pch=c(21,19,17)) +
-    annotate(geom="segment",x=32,xend=34,y=c(3,2.7,2.4),yend=c(3,2.7,2.4),linetype=c("solid","dotted","dashed"))
+  theme(
+    legend.position = c(.2, .95),
+    legend.justification = c("right", "top"),
+    legend.title=element_blank()
+  )
 
 # maxstrain
 tmp <- melt(br[!br$Continent=="NorthAmericaWest",c("site","maxstrain")])
@@ -93,8 +94,9 @@ tmp2$Continent <- br$Continent.short[match(tmp2$site,br$site)]
 
 f2 <-  ggplot(data=tmp2, aes(x=lat,y=maxstrain,ymin=maxstrain-se,ymax=maxstrain+se)) +
   geom_pointrange(size=0.5, aes(shape=Continent)) +
+  scale_fill_manual(values=c("black","red","darkred")) +
   scale_shape_manual(values=c(21,19,17)) +
-  geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
+  geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
   theme_classic() +
   ylab("Max Strain") +
   xlab("Latitude") +
@@ -111,8 +113,9 @@ tmp2$Continent <- br$Continent.short[match(tmp2$site,br$site)]
 
 f3 <-  ggplot(data=tmp2, aes(x=lat,y=slope_Mpa,ymin=slope_Mpa-se,ymax=slope_Mpa+se)) +
   geom_pointrange(size=0.5, aes(shape=Continent)) +
+  scale_fill_manual(values=c("black","red","darkred")) +
   scale_shape_manual(values=c(21,19,17)) +
-  geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
+  geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
   theme_classic() +
   ylab("Slope") +
   xlab("Latitude") +
@@ -125,7 +128,7 @@ dev.off()
 ### ### plot 5 - with wNA
 datatypes <- c("peak_force","slope_Mpa","maxstress","maxstrain","auc_modulus")
 
-tmp2 <- list()
+dat.out <- list()
 for (i in 1:5)
 {
   tmp <- melt(br[,c(colnames(br)%in%c("site",datatypes[i]))])
@@ -141,43 +144,60 @@ dat.out[[i]] <- tmp2
   
 f1 <- ggplot(data=dat.out[[1]],aes(x=dat.out[[1]]$lat,y=dat.out[[1]][,2],ymin=dat.out[[1]][,2]-dat.out[[1]]$se,ymax=dat.out[[1]][,2]+dat.out[[1]]$se)) +
   geom_pointrange(size=0.5, aes(shape=Continent)) +
-  scale_shape_manual(values=c(21,19,17,15)) +
-  geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
+#  scale_shape_manual(values=c(21,19,17,15)) +
+#  geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
+  scale_fill_manual(values=c("black","blue","red","darkred")) +
+  scale_shape_manual(values=c(21,15,19,17)) +
+  geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
   theme_classic() +
   ylab(colnames(dat.out[[1]])[2]) +
-  xlab("Latitude") 
+  xlab("Latitude") +
+  theme(
+    legend.position = c(.2, .95),
+    legend.justification = c("right", "top"),
+    legend.title=element_blank()
+  )
+
 
 f2 <- ggplot(data=dat.out[[2]],aes(x=dat.out[[2]]$lat,y=dat.out[[2]][,2],ymin=dat.out[[2]][,2]-dat.out[[2]]$se,ymax=dat.out[[2]][,2]+dat.out[[2]]$se)) +
   geom_pointrange(size=0.5, aes(shape=Continent)) +
-  scale_shape_manual(values=c(21,19,17,15)) +
-  geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
+  scale_fill_manual(values=c("black","blue","red","darkred")) +
+  scale_shape_manual(values=c(21,15,19,17)) +
+  geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
   theme_classic() +
   ylab(colnames(dat.out[[2]])[2]) +
-  xlab("Latitude") 
+  xlab("Latitude")+
+  theme(legend.position = "none") 
 
 f3 <- ggplot(data=dat.out[[3]],aes(x=dat.out[[3]]$lat,y=dat.out[[3]][,2],ymin=dat.out[[3]][,2]-dat.out[[3]]$se,ymax=dat.out[[3]][,2]+dat.out[[3]]$se)) +
   geom_pointrange(size=0.5, aes(shape=Continent)) +
-  scale_shape_manual(values=c(21,19,17,15)) +
-  geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
+  scale_fill_manual(values=c("black","blue","red","darkred")) +
+  scale_shape_manual(values=c(21,15,19,17)) +
+  geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
   theme_classic() +
   ylab(colnames(dat.out[[3]])[2]) +
-  xlab("Latitude") 
+  xlab("Latitude") +
+  theme(legend.position = "none") 
 
 f4 <- ggplot(data=dat.out[[4]],aes(x=dat.out[[4]]$lat,y=dat.out[[4]][,2],ymin=dat.out[[4]][,2]-dat.out[[4]]$se,ymax=dat.out[[4]][,2]+dat.out[[4]]$se)) +
   geom_pointrange(size=0.5, aes(shape=Continent)) +
-  scale_shape_manual(values=c(21,19,17,15)) +
-  geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
+  scale_fill_manual(values=c("black","blue","red","darkred")) +
+  scale_shape_manual(values=c(21,15,19,17)) +
+  geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
   theme_classic() +
   ylab(colnames(dat.out[[4]])[2]) +
-  xlab("Latitude") 
+  xlab("Latitude") +
+  theme(legend.position = "none") 
 
 f5 <- ggplot(data=dat.out[[5]],aes(x=dat.out[[5]]$lat,y=dat.out[[5]][,2],ymin=dat.out[[5]][,2]-dat.out[[5]]$se,ymax=dat.out[[5]][,2]+dat.out[[5]]$se)) +
   geom_pointrange(size=0.5, aes(shape=Continent)) +
-  scale_shape_manual(values=c(21,19,17,15)) +
-  geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
+  scale_fill_manual(values=c("black","blue","red","darkred")) +
+  scale_shape_manual(values=c(21,15,19,17)) +
+  geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
   theme_classic() +
   ylab(colnames(dat.out[[5]])[2]) +
-  xlab("Latitude") 
+  xlab("Latitude") +
+  theme(legend.position = "none") 
 
 png('output/MaterialProperties-byLatitude-withWesternNA.png',width=12,height=12,units="in",res=700)
 grid.arrange(f1,f2,f3,f4,f5,nrow=3,ncol=2)
