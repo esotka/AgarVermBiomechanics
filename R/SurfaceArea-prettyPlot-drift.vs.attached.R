@@ -60,12 +60,21 @@ f1 <- ggplot(tmp3,aes(y=sumprojarea,x=natnon,fill=attachment.status2,ymax=sumpro
   theme_classic()
 
 ### pretty plot of tetrasporophytes
-tmp <- arch[arch$Surfacearea=="Y"& arch$StacyLifehistory=="Tetrasporophyte",]
-tmp <- melt(tmp[,c("site","natnon","attachment.status2","sumprojarea")])
-tmp2 <- cast(tmp,site+natnon+attachment.status2~variable,mean,na.rm=T)
-f2 <- ggplot(tmp2,aes(y=sumprojarea,x=natnon,fill=attachment.status2)) +
+tmp2 <- tmp[tmp$Surfacearea=="Y"& tmp$StacyLifehistory=="Tetrasporophyte",]
+tmp2 <- melt(tmp2[,c("site","natnon","attachment.status2","sumprojarea")])
+#tmp2 <- cast(tmp,site+natnon+attachment.status2~variable,mean,na.rm=T)
+
+tmp2$site_attach <- paste(tmp2$site,tmp2$attachment.status2)
+tmp3 <- cast(tmp2,site+natnon+attachment.status2~variable,mean,na.rm=T)
+tmp3$sd <- cast(tmp2,site+natnon+attachment.status2~variable,sd,na.rm=T)$sumprojarea
+tmp3$n <- table(tmp2$site_attach)
+tmp3$se <- (tmp3$sd)/sqrt(tmp3$n)
+
+
+
+f2 <- ggplot(tmp3,aes(y=sumprojarea,x=natnon,fill=attachment.status2,ymax=sumprojarea+se,ymin=sumprojarea-se)) +
   geom_boxplot() +
-  geom_point(pch = 21, position = position_jitterdodge(jitter.width=0.1)) +
+  geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) +
   scale_fill_manual(values=c("white","grey")) +
   ylab("Projected Area") + xlab("") +
   guides(fill=FALSE) +

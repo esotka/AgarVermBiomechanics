@@ -73,15 +73,18 @@ tmp2$Continent <- br$Continent.short[match(tmp2$site,br$site)]
 
 f1 <-  ggplot(data=tmp2, aes(x=JanSST,y=peak_force,ymax=peak_force+se,ymin=peak_force-se)) +
   geom_pointrange(size=0.5, aes(shape=Continent)) +
+  scale_fill_manual(values=c("black","red","darkred")) +
   scale_shape_manual(values=c(21,19,17)) +
-  geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
+  geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
   theme_classic() +
   ylab("peak breakage force N (mean)") +
   xlab("January SST") +
   theme(legend.position = "none") +
-  annotate(geom = "text", x = 14.5, y = c(3,2.7,2.4), label = c("Japan","Eastern NA","Europe"),hjust = 0) +
-  annotate(geom="pointrange",x=13.5,y=c(3,2.7,2.4),ymin=0,ymax=0,pch=c(21,19,17)) +
-  annotate(geom="segment",x=13,xend=14,y=c(3,2.7,2.4),yend=c(3,2.7,2.4),linetype=c("solid","dotted","dashed"))
+  theme(
+    legend.position = c(.95, .95),
+    legend.justification = c("right", "top"),
+    legend.title=element_blank()
+  )
 
 # maxstrain
 tmp <- melt(br[!br$Continent=="NorthAmericaWest",c("site","maxstrain")])
@@ -94,8 +97,9 @@ tmp2$Continent <- br$Continent.short[match(tmp2$site,br$site)]
 
 f2 <-  ggplot(data=tmp2, aes(x=JanSST,y=maxstrain,ymax=maxstrain+se,ymin=maxstrain-se)) +
   geom_pointrange(size=0.5, aes(shape=Continent)) +
+  scale_fill_manual(values=c("black","red","darkred")) +
   scale_shape_manual(values=c(21,19,17)) +
-  geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
+  geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
   theme_classic() +
   ylab("Max Strain") +
   xlab("January SST") +
@@ -112,8 +116,9 @@ tmp2$Continent <- br$Continent.short[match(tmp2$site,br$site)]
 
 f3 <-  ggplot(data=tmp2, aes(x=JanSST,y=slope_Mpa,ymax=slope_Mpa+se,ymin=slope_Mpa-se)) +
   geom_pointrange(size=0.5, aes(shape=Continent)) +
+  scale_fill_manual(values=c("black","red","darkred")) +
   scale_shape_manual(values=c(21,19,17)) +
-  geom_smooth(method=lm,aes(linetype=Continent),size=.5,color="black") +
+  geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
   theme_classic() +
   ylab("Slope") +
   xlab("January SST") +

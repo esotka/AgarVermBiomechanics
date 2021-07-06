@@ -12,6 +12,7 @@ tmp <- data.frame(long=c("Japan","NorthAmericaWest","NorthAmericaEast","Europe")
 arch <- read.csv('data/architecture.csv')
 arch$site <- tolower(substr(arch$Individual_ID,1,3))
 arch$Continent <- meta$Continent[match(arch$site,meta$field_site_code_2015)]
+arch$Continent <- factor(arch$Continent)
 arch$Continent <- factor(arch$Continent,levels=levels(arch$Continent)[c(2,4,3,1)])
 arch <- arch[arch$Surfacearea=="Y",]
 print("architecture data")

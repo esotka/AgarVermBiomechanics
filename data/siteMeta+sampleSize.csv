@@ -1,10 +1,10 @@
 SiteID,Japan.Introduced,Continent,Subregion,PopulationID,Latitude,Longitude,Salinity.ppt,JanSST,Substrate,Substrate2,Collection.date,Collection.waterTemp.degC,nBreakage,nArchitecture
 akk,Japan,Japan,Hokkaido,Chikarakotan,43.02513,144.879657,31,2.9748847,mudflat,mudflatmix,6/2/15,22.19,17,7
 bob,Introduced,NorthAmericaWest,California,BodegaBay,38.31777,-123.055447,34,11.3108753,mudflat,mudflat,8/14/15,14.93,23,10
-bom,Introduced,Europe,UnitedKingdom,Bournemouth,50.4339,1.46025,15,9.6,mudflat,mudflat,NA,NA,19,10
+bom,Introduced,Europe,UnitedKingdom,Bournemouth,50.695029,-1.933298,15,9.6,mudflat,mudflat,NA,NA,19,10
 dhd,Introduced,Europe,Germany,Heikendorf,54.36382,10.193674,15,4.3317971,rockyshore,rockyshore,8/31/15,21.38,16,11
 eld,Introduced,NorthAmericaWest,SalishSea,EldsInlet,47.08489,-122.978715,22,7.7,mudflat,mudflat,9/1/15,18.71,20,10
-elk,Introduced,NorthAmericaWest,California,ElkhornSlough,36.5034,-121.3513,38,12.9030202,mudflat,mudflatmix,NA,NA,0,10
+elk,Introduced,NorthAmericaWest,California,ElkhornSlough,36.812194,-121.781389,38,12.9030202,mudflat,mudflatmix,NA,NA,0,10
 far,Introduced,Europe,Iberia,Faro,37.02782,-8.022425,38,16.5901839,mudflat,mudflat,7/6/15,24.21,9,11
 fdm,Introduced,Europe,France,Dinan,48.5146,-1.9698,8,9.9657094,mudflat,mudflatmix,8/12/15,35.58,14,12
 fjn,Introduced,NorthAmericaEast,SoutheastUS,FortJohnson,32.75115,-79.901191,29,14.135073,mudflat,mudflat,7/10/15,31.72,19,8

@@ -53,12 +53,17 @@ tmp2$janSST <- meta$JanSST[match(tmp2$site,meta$field_site_code_2015)]
 
 f1 <-  ggplot(data=tmp2, aes(x=janSST,y=sumprojarea,ymax=sumprojarea+se,ymin=sumprojarea-se)) +
   geom_pointrange(size=0.5, aes(shape=Continent.short)) +
+  scale_fill_manual(values=c("black","red","darkred")) +
   scale_shape_manual(values=c(21,19,17)) +
-  geom_smooth(method=lm,aes(linetype=Continent.short),size=.5,color="black") +
+  geom_smooth(method=lm,aes(linetype=Continent.short,fill=Continent.short),size=.5,color="black") +
   theme_classic() +
   ylab("Surface area") +
   xlab("January SST") +
-  theme(legend.position = "top")
+  theme(
+    legend.position = c(.2, .95),
+    legend.justification = c("right", "top"),
+    legend.title=element_blank()
+  )
 
 
 
@@ -71,16 +76,16 @@ dev.off()
 
 ### plot - 3 continents
 ### all thalli
-fit <- lm(sumprojarea~Continent.short*janSST,data=tmp2)
-visreg(fit,"janSST",by="Continent.short")#,overlay=T)
+#fit <- lm(sumprojarea~Continent.short*janSST,data=tmp2)
+#visreg(fit,"janSST",by="Continent.short")#,overlay=T)
 
 ### Reproductive thalli only
-tmp <- arch[arch$Surfacearea=="Y" & arch$StacyLifehistory=="Tetrasporophyte" & ! arch$Continent.short=="wNA",]
-tmp <- melt(tmp[,c("site","natnon","Continent.short","sumprojarea")])
-tmp2 <- cast(tmp,site+natnon+Continent.short~variable,mean,na.rm=T)
-tmp2$janSST <- meta$JanSST[match(tmp2$site,meta$field_site_code_2015)]
-fit <- lm(sumprojarea~Continent.short*janSST,data=tmp2)
-visreg(fit,"janSST",by="Continent.short")#,overlay=T)
+#tmp <- arch[arch$Surfacearea=="Y" & arch$StacyLifehistory=="Tetrasporophyte" & ! arch$Continent.short=="wNA",]
+#tmp <- melt(tmp[,c("site","natnon","Continent.short","sumprojarea")])
+#tmp2 <- cast(tmp,site+natnon+Continent.short~variable,mean,na.rm=T)
+#tmp2$janSST <- meta$JanSST[match(tmp2$site,meta$field_site_code_2015)]
+#fit <- lm(sumprojarea~Continent.short*janSST,data=tmp2)
+#visreg(fit,"janSST",by="Continent.short")#,overlay=T)
 
 
 
