@@ -46,7 +46,7 @@ print(summary(m)$coefficients); print(anova(m))
 f <- ggplot(br,aes(y=peak_force,x=natnon,fill=MudRock)) +
   geom_boxplot() +
   scale_fill_manual(values=c("white","grey")) +
-  ylab("Peak force") + xlab("") +
+  ylab("Breaking force (N)") + xlab("") +
   theme_classic()
 print(f)
 
@@ -159,7 +159,7 @@ f1 <- ggplot(tmp2,aes(y=peak_force,x=natnon,fill=MudRock,ymin=peak_force-se,ymax
   geom_boxplot() +
   geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) +
   scale_fill_manual(values=c("white","grey")) +
-  ylab("peak force") + xlab("") +
+  ylab("Breaking force (N)") + xlab("") +
   guides(fill=FALSE) +
   theme_classic()
 
@@ -256,7 +256,7 @@ f1 <- ggplot(tmp2,aes(y=peak_force,x=Continent,fill=MudRock,ymax=peak_force+se,y
   geom_boxplot() +
   geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) + 
   scale_fill_manual(values=c("white","grey")) +
-  ylab("peak force") + xlab("") +
+  ylab("Breaking force (N)") + xlab("") +
   guides(fill=FALSE) +
   theme_classic() + theme(legend.position = "none") +
   annotate("text", x=c(.8,1.2), y=0, label= table(tmp2$Continent,tmp2$MudRock)[1,]) +
