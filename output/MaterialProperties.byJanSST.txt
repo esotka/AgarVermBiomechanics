@@ -1,225 +1,135 @@
-lmer(formula = peak_force ~ Continent.short * JanSST + (1 | site), 
-    data = br[!br$Continent == "NorthAmericaWest", ])
-                                Estimate Std. Error       df    t value
-(Intercept)                   1.69337315 0.23192109 29.31390  7.3015056
-Continent.shorteNA            0.21927033 0.35623212 29.11933  0.6155266
-Continent.shortEurope         1.50050908 0.39143415 29.89895  3.8333627
-JanSST                       -0.04704642 0.01748407 29.84394 -2.6908156
-Continent.shorteNA:JanSST    -0.01057559 0.03464386 29.07545 -0.3052659
-Continent.shortEurope:JanSST -0.13050726 0.03438499 30.94556 -3.7954724
-                                 Pr(>|t|)
-(Intercept)                  4.531675e-08
-Continent.shorteNA           5.429884e-01
-Continent.shortEurope        6.048202e-04
-JanSST                       1.156189e-02
-Continent.shorteNA:JanSST    7.623384e-01
-Continent.shortEurope:JanSST 6.440544e-04
-Type III Analysis of Variance Table with Satterthwaite's method
-                        Sum Sq Mean Sq NumDF  DenDF F value   Pr(>F)    
-Continent.short         5.5482  2.7741     2 29.539  7.7849 0.001925 ** 
-JanSST                 13.6662 13.6662     1 30.002 38.3514 8.14e-07 ***
-Continent.short:JanSST  5.3039  2.6519     2 29.999  7.4422 0.002374 ** 
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-lmer(formula = maxstress ~ Continent.short * JanSST + (1 | site), 
-    data = br[!br$Continent == "NorthAmericaWest", ])
-                                 Estimate Std. Error       df     t value
-(Intercept)                   0.835680071 0.22929242 28.78638  3.64460395
-Continent.shorteNA            0.033167746 0.35184744 28.51709  0.09426741
-Continent.shortEurope         0.461537897 0.38816918 29.67530  1.18901221
-JanSST                        0.036190392 0.01733230 29.55478  2.08803210
-Continent.shorteNA:JanSST     0.002103666 0.03420897 28.44332  0.06149456
-Continent.shortEurope:JanSST -0.024127282 0.03427431 31.27121 -0.70394654
-                                Pr(>|t|)
-(Intercept)                  0.001048382
-Continent.shorteNA           0.925555985
-Continent.shortEurope        0.243862533
-JanSST                       0.045517263
-Continent.shorteNA:JanSST    0.951395432
-Continent.shortEurope:JanSST 0.486675300
-Type III Analysis of Variance Table with Satterthwaite's method
-                        Sum Sq Mean Sq NumDF  DenDF F value  Pr(>F)  
-Continent.short        0.89351 0.44676     2 29.141  0.7844 0.46579  
-JanSST                 2.08658 2.08658     1 29.849  3.6636 0.06524 .
-Continent.short:JanSST 0.31789 0.15894     2 29.826  0.2791 0.75844  
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-lmer(formula = maxstrain ~ Continent.short * JanSST + (1 | site), 
-    data = br[!br$Continent == "NorthAmericaWest", ])
-                                 Estimate  Std. Error       df    t value
-(Intercept)                   0.299553469 0.043254586 29.31372  6.9253574
-Continent.shorteNA           -0.032053526 0.066491121 29.19453 -0.4820723
-Continent.shortEurope        -0.027287629 0.072840941 29.65340 -0.3746194
-JanSST                       -0.003417777 0.003254121 29.63327 -1.0502921
-Continent.shorteNA:JanSST    -0.004273716 0.006467364 29.17210 -0.6608126
-Continent.shortEurope:JanSST -0.002833873 0.006373821 30.25796 -0.4446113
-                                 Pr(>|t|)
-(Intercept)                  1.230673e-07
-Continent.shorteNA           6.333491e-01
-Continent.shortEurope        7.106094e-01
-JanSST                       3.020742e-01
-Continent.shorteNA:JanSST    5.139176e-01
-Continent.shortEurope:JanSST 6.597648e-01
-Type III Analysis of Variance Table with Satterthwaite's method
-                          Sum Sq   Mean Sq NumDF  DenDF F value  Pr(>F)  
-Continent.short        0.0018847 0.0009424     2 29.442  0.1371 0.87247  
-JanSST                 0.0288378 0.0288378     1 29.710  4.1941 0.04949 *
-Continent.short:JanSST 0.0035586 0.0017793     2 29.713  0.2588 0.77372  
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-lmer(formula = slope_Mpa ~ Continent.short * JanSST + (1 | site), 
-    data = br[!br$Continent == "NorthAmericaWest", ])
-                               Estimate Std. Error       df    t value
-(Intercept)                   3.1897806 1.10242830 28.43469  2.8934132
-Continent.shorteNA            0.6127820 1.69191753 28.17881  0.3621820
-Continent.shortEurope         4.5191924 1.86542432 29.26571  2.4226083
-JanSST                        0.3010450 0.08329889 29.15811  3.6140337
-Continent.shorteNA:JanSST     0.1433170 0.16450620 28.11061  0.8711950
-Continent.shortEurope:JanSST -0.1636392 0.16458116 30.75736 -0.9942765
-                                Pr(>|t|)
-(Intercept)                  0.007238140
-Continent.shorteNA           0.719918209
-Continent.shortEurope        0.021823468
-JanSST                       0.001121752
-Continent.shorteNA:JanSST    0.391027457
-Continent.shortEurope:JanSST 0.327846537
-Type III Analysis of Variance Table with Satterthwaite's method
-                        Sum Sq Mean Sq NumDF  DenDF F value  Pr(>F)    
-Continent.short         77.204  38.602     2 28.764  3.1257 0.05911 .  
-JanSST                 203.872 203.872     1 29.425 16.5081 0.00033 ***
-Continent.short:JanSST  28.968  14.484     2 29.407  1.1728 0.32356    
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-lmer(formula = auc_modulus ~ Continent.short * JanSST + (1 | 
+lmer(formula = log(peak_force) ~ Continent.short + JanSST + (1 | 
     site), data = br[!br$Continent == "NorthAmericaWest", ])
-                                 Estimate  Std. Error       df     t value
-(Intercept)                   0.124897656 0.042005340 27.58143  2.97337564
-Continent.shorteNA            0.003686925 0.064463631 27.32992  0.05719388
-Continent.shortEurope         0.010757291 0.071087067 28.40211  0.15132557
-JanSST                        0.003624772 0.003174276 28.29439  1.14192096
-Continent.shorteNA:JanSST    -0.004121272 0.006267767 27.26235 -0.65753428
-Continent.shortEurope:JanSST -0.002238950 0.006273251 29.87549 -0.35690427
-                                Pr(>|t|)
-(Intercept)                  0.006053703
-Continent.shorteNA           0.954806872
-Continent.shortEurope        0.880788625
-JanSST                       0.263058929
-Continent.shorteNA:JanSST    0.516351155
-Continent.shortEurope:JanSST 0.723672134
+                          Estimate Std. Error       df     t value
+(Intercept)            0.649043997 0.17029436 31.56356  3.81130643
+Continent.shorteNA     0.056946429 0.14560749 31.38696  0.39109546
+Continent.shortEurope  0.004452058 0.13767516 32.91264  0.03233741
+JanSST                -0.057065134 0.01211348 31.96134 -4.71087957
+                          Pr(>|t|)
+(Intercept)           6.026870e-04
+Continent.shorteNA    6.983690e-01
+Continent.shortEurope 9.743983e-01
+JanSST                4.607341e-05
 Type III Analysis of Variance Table with Satterthwaite's method
-                          Sum Sq   Mean Sq NumDF  DenDF F value Pr(>F)
-Continent.short        0.0004184 0.0002092     2 27.907  0.0115 0.9886
-JanSST                 0.0054298 0.0054298     1 28.560  0.2972 0.5899
-Continent.short:JanSST 0.0085930 0.0042965     2 28.541  0.2352 0.7920
+                Sum Sq Mean Sq NumDF  DenDF F value    Pr(>F)    
+Continent.short 0.0462  0.0231     2 32.056   0.089     0.915    
+JanSST          5.7559  5.7559     1 31.961  22.192 4.607e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+lmer(formula = log(maxstress) ~ Continent.short + JanSST + (1 | 
+    site), data = br[!br$Continent == "NorthAmericaWest", ])
+                         Estimate Std. Error       df    t value  Pr(>|t|)
+(Intercept)           -0.16445883 0.17828669 31.73753 -0.9224403 0.3632587
+Continent.shorteNA     0.08244950 0.15241938 31.54296  0.5409384 0.5923500
+Continent.shortEurope  0.12812543 0.14428833 33.21822  0.8879820 0.3809353
+JanSST                 0.01633652 0.01268601 32.17243  1.2877584 0.2070163
+Type III Analysis of Variance Table with Satterthwaite's method
+                 Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
+Continent.short 0.25529 0.12764     2 32.278  0.4074 0.6688
+JanSST          0.51959 0.51959     1 32.172  1.6583 0.2070
+lmer(formula = log(maxstrain) ~ Continent.short + JanSST + (1 | 
+    site), data = br[!br$Continent == "NorthAmericaWest", ])
+                         Estimate Std. Error       df   t value     Pr(>|t|)
+(Intercept)           -1.12641507 0.18809364 31.56179 -5.988587 1.182850e-06
+Continent.shorteNA    -0.31587913 0.16093149 31.46450 -1.962817 5.856038e-02
+Continent.shortEurope -0.30304038 0.15132097 32.32310 -2.002633 5.366407e-02
+JanSST                -0.02913081 0.01335972 31.79083 -2.180495 3.673639e-02
+Type III Analysis of Variance Table with Satterthwaite's method
+                 Sum Sq Mean Sq NumDF  DenDF F value  Pr(>F)  
+Continent.short 0.92997 0.46499     2 31.838  2.7223 0.08102 .
+JanSST          0.81211 0.81211     1 31.791  4.7546 0.03674 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+lmer(formula = log(slope_Mpa) ~ Continent.short + JanSST + (1 | 
+    site), data = br[!br$Continent == "NorthAmericaWest", ])
+                        Estimate  Std. Error       df   t value     Pr(>|t|)
+(Intercept)           1.32674161 0.120611010 31.71823 11.000170 2.343062e-12
+Continent.shorteNA    0.29709256 0.103098746 31.50890  2.881631 7.063726e-03
+Continent.shortEurope 0.41833235 0.097701195 33.30668  4.281753 1.480607e-04
+JanSST                0.03641416 0.008584469 32.18326  4.241865 1.751407e-04
+Type III Analysis of Variance Table with Satterthwaite's method
+                Sum Sq Mean Sq NumDF  DenDF F value    Pr(>F)    
+Continent.short 3.0280  1.5140     2 32.299  9.7563 0.0004847 ***
+JanSST          2.7922  2.7922     1 32.183 17.9934 0.0001751 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+lmer(formula = log(auc_modulus) ~ Continent.short + JanSST + 
+    (1 | site), data = br[!br$Continent == "NorthAmericaWest", 
+    ])
+                          Estimate Std. Error       df    t value
+(Intercept)           -2.170046681 0.33196377 31.51246 -6.5369985
+Continent.shorteNA    -0.147936503 0.28389502 31.35916 -0.5210958
+Continent.shortEurope -0.194375311 0.26799455 32.69036 -0.7252958
+JanSST                -0.008519098 0.02360327 31.86168 -0.3609287
+                          Pr(>|t|)
+(Intercept)           2.488213e-07
+Continent.shorteNA    6.059607e-01
+Continent.shortEurope 4.734310e-01
+JanSST                7.205349e-01
+Type III Analysis of Variance Table with Satterthwaite's method
+                 Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
+Continent.short 0.48927 0.24464     2 31.941  0.2875 0.7520
+JanSST          0.11084 0.11084     1 31.862  0.1303 0.7205
 [1] "only tetrasporophytes"
-lmer(formula = peak_force ~ Continent.short * JanSST + (1 | site), 
-    data = br2[!br2$Continent == "NorthAmericaWest", ])
-                                Estimate Std. Error       df    t value
-(Intercept)                   1.77424314 0.22047617 22.39017  8.0473239
-Continent.shorteNA            0.12376905 0.35777706 25.85003  0.3459390
-Continent.shortEurope         1.58731062 0.36686863 23.23687  4.3266458
-JanSST                       -0.05163754 0.01644343 23.57052 -3.1403140
-Continent.shorteNA:JanSST    -0.01158355 0.03793270 30.84569 -0.3053712
-Continent.shortEurope:JanSST -0.13896955 0.03253165 25.44876 -4.2718264
-                                 Pr(>|t|)
-(Intercept)                  4.711381e-08
-Continent.shorteNA           7.321883e-01
-Continent.shortEurope        2.446271e-04
-JanSST                       4.499009e-03
-Continent.shorteNA:JanSST    7.621347e-01
-Continent.shortEurope:JanSST 2.382345e-04
-Type III Analysis of Variance Table with Satterthwaite's method
-                        Sum Sq Mean Sq NumDF  DenDF F value    Pr(>F)    
-Continent.short         8.1237  4.0619     2 24.837 10.2746 0.0005604 ***
-JanSST                 16.5654 16.5654     1 29.050 41.9027 4.351e-07 ***
-Continent.short:JanSST  7.3793  3.6897     2 28.205  9.3331 0.0007749 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-lmer(formula = maxstress ~ Continent.short * JanSST + (1 | site), 
-    data = br2[!br2$Continent == "NorthAmericaWest", ])
-                                 Estimate Std. Error       df     t value
-(Intercept)                   0.913586121 0.20371036 17.95172  4.48473088
-Continent.shorteNA           -0.020227795 0.33380035 20.83839 -0.06059848
-Continent.shortEurope         0.502018990 0.34002408 18.96128  1.47642189
-JanSST                        0.025826551 0.01525834 19.37808  1.69261903
-Continent.shorteNA:JanSST    -0.003759298 0.03577288 24.75880 -0.10508793
-Continent.shortEurope:JanSST -0.023280077 0.03035541 21.29222 -0.76691681
-                                 Pr(>|t|)
-(Intercept)                  0.0002882306
-Continent.shorteNA           0.9522564114
-Continent.shortEurope        0.1562461420
-JanSST                       0.1065448819
-Continent.shorteNA:JanSST    0.9171527763
-Continent.shortEurope:JanSST 0.4515514179
-Type III Analysis of Variance Table with Satterthwaite's method
-                        Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
-Continent.short        1.15545 0.57772     2 20.173  1.2980 0.2949
-JanSST                 0.57532 0.57532     1 23.739  1.2926 0.2669
-Continent.short:JanSST 0.26343 0.13172     2 23.122  0.2959 0.7466
-lmer(formula = maxstrain ~ Continent.short * JanSST + (1 | site), 
-    data = br2[!br2$Continent == "NorthAmericaWest", ])
-                                 Estimate  Std. Error       df    t value
-(Intercept)                   0.306196560 0.043192130 26.00301  7.0891748
-Continent.shorteNA           -0.036328534 0.068669160 29.12253 -0.5290371
-Continent.shortEurope        -0.024379938 0.071647818 26.09464 -0.3402747
-JanSST                       -0.003594899 0.003206753 26.23145 -1.1210403
-Continent.shorteNA:JanSST    -0.004388457 0.007097967 34.32855 -0.6182696
-Continent.shortEurope:JanSST -0.003406707 0.006286374 27.33389 -0.5419192
-                                 Pr(>|t|)
-(Intercept)                  1.577199e-07
-Continent.shorteNA           6.007892e-01
-Continent.shortEurope        7.363738e-01
-JanSST                       2.724291e-01
-Continent.shorteNA:JanSST    5.404784e-01
-Continent.shortEurope:JanSST 5.922649e-01
-Type III Analysis of Variance Table with Satterthwaite's method
-                         Sum Sq  Mean Sq NumDF  DenDF F value  Pr(>F)  
-Continent.short        0.002398 0.001199     2 27.810  0.1513 0.86026  
-JanSST                 0.034358 0.034358     1 31.666  4.3359 0.04548 *
-Continent.short:JanSST 0.004364 0.002182     2 30.809  0.2754 0.76114  
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-lmer(formula = slope_Mpa ~ Continent.short * JanSST + (1 | site), 
-    data = br2[!br2$Continent == "NorthAmericaWest", ])
-                                Estimate Std. Error       df    t value
-(Intercept)                   3.45465520 0.97752744 19.38874  3.5340749
-Continent.shorteNA            0.80220967 1.60057569 22.49209  0.5012007
-Continent.shortEurope         4.75630286 1.63118985 20.44751  2.9158487
-JanSST                        0.24511307 0.07319054 20.88191  3.3489722
-Continent.shorteNA:JanSST     0.06704967 0.17139289 26.72241  0.3912045
-Continent.shortEurope:JanSST -0.18648983 0.14554042 22.90688 -1.2813611
-                                Pr(>|t|)
-(Intercept)                  0.002163098
-Continent.shorteNA           0.621099924
-Continent.shortEurope        0.008415209
-JanSST                       0.003058229
-Continent.shorteNA:JanSST    0.698748001
-Continent.shortEurope:JanSST 0.212886773
-Type III Analysis of Variance Table with Satterthwaite's method
-                       Sum Sq Mean Sq NumDF  DenDF F value   Pr(>F)   
-Continent.short        89.025  44.512     2 21.762  4.4360 0.024217 * 
-JanSST                 84.209  84.209     1 25.587  8.3922 0.007619 **
-Continent.short:JanSST 21.146  10.573     2 24.915  1.0537 0.363670   
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-lmer(formula = auc_modulus ~ Continent.short * JanSST + (1 | 
+lmer(formula = log(peak_force) ~ Continent.short + JanSST + (1 | 
     site), data = br2[!br2$Continent == "NorthAmericaWest", ])
-                                 Estimate  Std. Error       df     t value
-(Intercept)                   0.137805898 0.042017525 20.97288  3.27972426
-Continent.shorteNA           -0.002368810 0.068637344 24.30363 -0.03451196
-Continent.shortEurope         0.006199034 0.070056344 22.02183  0.08848641
-JanSST                        0.002599810 0.003142386 22.44493  0.82733640
-Continent.shorteNA:JanSST    -0.005524173 0.007331188 28.90889 -0.75351672
-Continent.shortEurope:JanSST -0.001402060 0.006239923 24.51451 -0.22469192
-                                Pr(>|t|)
-(Intercept)                  0.003579418
-Continent.shorteNA           0.972750793
-Continent.shortEurope        0.930289860
-JanSST                       0.416756262
-Continent.shorteNA:JanSST    0.457232957
-Continent.shortEurope:JanSST 0.824081294
+                         Estimate Std. Error       df    t value     Pr(>|t|)
+(Intercept)            0.74696109 0.15750058 23.92701  4.7425927 8.048263e-05
+Continent.shorteNA    -0.04316024 0.14149674 26.61120 -0.3050264 7.627191e-01
+Continent.shortEurope  0.01763972 0.12799831 26.20346  0.1378121 8.914425e-01
+JanSST                -0.06363896 0.01114255 25.14028 -5.7113453 5.873152e-06
 Type III Analysis of Variance Table with Satterthwaite's method
-                          Sum Sq   Mean Sq NumDF  DenDF F value Pr(>F)
-Continent.short        0.0002259 0.0001130     2 23.468  0.0065 0.9935
-JanSST                 0.0001598 0.0001598     1 27.554  0.0092 0.9242
-Continent.short:JanSST 0.0099226 0.0049613     2 26.806  0.2859 0.7536
+                Sum Sq Mean Sq NumDF  DenDF F value    Pr(>F)    
+Continent.short 0.0469  0.0235     2 26.604  0.0926    0.9119    
+JanSST          8.2685  8.2685     1 25.140 32.6195 5.873e-06 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+lmer(formula = log(maxstress) ~ Continent.short + JanSST + (1 | 
+    site), data = br2[!br2$Continent == "NorthAmericaWest", ])
+                          Estimate Std. Error       df     t value  Pr(>|t|)
+(Intercept)           -0.082230486 0.17676913 21.19493 -0.46518579 0.6465425
+Continent.shorteNA    -0.011495805 0.15838974 23.57327 -0.07257923 0.9427533
+Continent.shortEurope  0.136523997 0.14334928 23.00521  0.95238704 0.3508009
+JanSST                 0.008265939 0.01249132 22.11299  0.66173455 0.5149785
+Type III Analysis of Variance Table with Satterthwaite's method
+                 Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
+Continent.short 0.34847 0.17424     2 23.447  0.6048 0.5545
+JanSST          0.12616 0.12616     1 22.113  0.4379 0.5150
+lmer(formula = log(maxstrain) ~ Continent.short + JanSST + (1 | 
+    site), data = br2[!br2$Continent == "NorthAmericaWest", ])
+                         Estimate Std. Error       df   t value     Pr(>|t|)
+(Intercept)           -1.09310437 0.17818961 28.56791 -6.134501 1.172938e-06
+Continent.shorteNA    -0.32140778 0.15733703 31.23303 -2.042798 4.958934e-02
+Continent.shortEurope -0.29075863 0.14326506 29.64800 -2.029515 5.146587e-02
+JanSST                -0.03069832 0.01254679 28.80413 -2.446708 2.075951e-02
+Type III Analysis of Variance Table with Satterthwaite's method
+                 Sum Sq Mean Sq NumDF  DenDF F value  Pr(>F)  
+Continent.short 0.91106 0.45553     2 30.514  2.8704 0.07207 .
+JanSST          0.95005 0.95005     1 28.804  5.9864 0.02076 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+lmer(formula = log(slope_Mpa) ~ Continent.short + JanSST + (1 | 
+    site), data = br2[!br2$Continent == "NorthAmericaWest", ])
+                        Estimate  Std. Error       df   t value     Pr(>|t|)
+(Intercept)           1.37538938 0.123985198 24.00998 11.093174 6.212439e-11
+Continent.shorteNA    0.22025414 0.111275859 26.69756  1.979352 5.817419e-02
+Continent.shortEurope 0.40804446 0.100676329 26.19792  4.053033 4.024161e-04
+JanSST                0.02937688 0.008767459 25.15587  3.350672 2.548125e-03
+Type III Analysis of Variance Table with Satterthwaite's method
+                Sum Sq Mean Sq NumDF  DenDF F value   Pr(>F)   
+Continent.short 2.4888  1.2444     2 26.637   8.236 0.001642 **
+JanSST          1.6964  1.6964     1 25.156  11.227 0.002548 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+lmer(formula = log(auc_modulus) ~ Continent.short + JanSST + 
+    (1 | site), data = br2[!br2$Continent == "NorthAmericaWest", 
+    ])
+                         Estimate Std. Error       df    t value     Pr(>|t|)
+(Intercept)           -2.04972526 0.32733299 24.56247 -6.2618964 1.619136e-06
+Continent.shorteNA    -0.25225967 0.29161461 27.19150 -0.8650447 3.945822e-01
+Continent.shortEurope -0.18529717 0.26438885 26.13990 -0.7008509 4.895883e-01
+JanSST                -0.01765306 0.02308589 25.24415 -0.7646690 4.515581e-01
+Type III Analysis of Variance Table with Satterthwaite's method
+                 Sum Sq Mean Sq NumDF  DenDF F value Pr(>F)
+Continent.short 0.68620 0.34310     2 26.801  0.4369 0.6506
+JanSST          0.45919 0.45919     1 25.244  0.5847 0.4516
