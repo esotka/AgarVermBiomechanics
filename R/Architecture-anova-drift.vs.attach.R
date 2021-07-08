@@ -7,6 +7,7 @@ library(lmerTest)
 
 ### site Metadata
 meta <- read.csv('data/siteMeta.csv')
+meta$Continent <- factor(meta$Continent)
 tmp <- data.frame(long=levels(meta$Continent),short=c("Japan","wNA","eNA","Europe"))
 
 ########################

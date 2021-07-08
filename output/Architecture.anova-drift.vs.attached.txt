@@ -6,10 +6,14 @@
   Introduced     11    51
 lmer(formula = log(tmp[, y[i]]) ~ natnon + attachment.status2 + 
     (1 | site), data = tmp)
-                          Estimate Std. Error        df    t value     Pr(>|t|)
-(Intercept)              5.7010615  0.1733309  26.89032 32.8912107 2.958572e-23
-natnonIntroduced         0.1869633  0.2782067  41.29395  0.6720303 5.053073e-01
-attachment.status2drift -0.1045221  0.2096902 137.60246 -0.4984598 6.189558e-01
+                          Estimate Std. Error        df    t value
+(Intercept)              5.7010615  0.1733309  26.89032 32.8912107
+natnonIntroduced         0.1869633  0.2782067  41.29395  0.6720303
+attachment.status2drift -0.1045221  0.2096902 137.60246 -0.4984598
+                            Pr(>|t|)
+(Intercept)             2.958572e-23
+natnonIntroduced        5.053073e-01
+attachment.status2drift 6.189558e-01
 Type III Analysis of Variance Table with Satterthwaite's method
                     Sum Sq Mean Sq NumDF   DenDF F value Pr(>F)
 natnon             0.16454 0.16454     1  41.294  0.4516 0.5053
@@ -37,10 +41,14 @@ attachment.status2 0.27584 0.27584     1 70.36  0.7069 0.4033
   Introduced     50   184
 lmer(formula = log(tmp[, y[i]]) ~ natnon + attachment.status2 + 
     (1 | site), data = tmp)
-                          Estimate Std. Error        df   t value     Pr(>|t|)
-(Intercept)              3.3521318  0.1645057  37.71038 20.376991 5.931699e-22
-natnonIntroduced         0.4893566  0.2309787  49.66774  2.118623 3.914734e-02
-attachment.status2drift -0.1576498  0.1520870 299.14977 -1.036577 3.007702e-01
+                          Estimate Std. Error        df   t value
+(Intercept)              3.3521318  0.1645057  37.71038 20.376991
+natnonIntroduced         0.4893566  0.2309787  49.66774  2.118623
+attachment.status2drift -0.1576498  0.1520870 299.14977 -1.036577
+                            Pr(>|t|)
+(Intercept)             5.931699e-22
+natnonIntroduced        3.914734e-02
+attachment.status2drift 3.007702e-01
 Type III Analysis of Variance Table with Satterthwaite's method
                     Sum Sq Mean Sq NumDF   DenDF F value  Pr(>F)  
 natnon             2.11981 2.11981     1  49.668  4.4886 0.03915 *
@@ -54,10 +62,14 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
   Introduced     48   168
 lmer(formula = log(tmp[, y[i]]) ~ natnon + attachment.status2 + 
     (1 | site), data = tmp)
-                           Estimate Std. Error        df    t value     Pr(>|t|)
-(Intercept)              3.08120726  0.1947653  34.87150 15.8201023 1.747639e-17
-natnonIntroduced         0.72293459  0.2572346  44.06301  2.8104094 7.354408e-03
-attachment.status2drift -0.09126613  0.1691447 217.78334 -0.5395741 5.900420e-01
+                           Estimate Std. Error        df    t value
+(Intercept)              3.08120726  0.1947653  34.87150 15.8201023
+natnonIntroduced         0.72293459  0.2572346  44.06301  2.8104094
+attachment.status2drift -0.09126613  0.1691447 217.78334 -0.5395741
+                            Pr(>|t|)
+(Intercept)             1.747639e-17
+natnonIntroduced        7.354408e-03
+attachment.status2drift 5.900420e-01
 Type III Analysis of Variance Table with Satterthwaite's method
                    Sum Sq Mean Sq NumDF   DenDF F value   Pr(>F)   
 natnon             3.5629  3.5629     1  44.063  7.8984 0.007354 **
@@ -72,10 +84,14 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
   Introduced      8    48
 lmer(formula = log(tmp[, y[i]]) ~ natnon + attachment.status2 + 
     (1 | site), data = tmp)
-                           Estimate Std. Error        df    t value    Pr(>|t|)
-(Intercept)              0.37099805  0.1230099  20.62168  3.0160020 0.006667447
-natnonIntroduced         0.07954796  0.2152695  38.81127  0.3695273 0.713743384
-attachment.status2drift -0.06163099  0.1798182 109.73340 -0.3427406 0.732449317
+                           Estimate Std. Error        df    t value
+(Intercept)              0.37099805  0.1230099  20.62168  3.0160020
+natnonIntroduced         0.07954796  0.2152695  38.81127  0.3695273
+attachment.status2drift -0.06163099  0.1798182 109.73340 -0.3427406
+                           Pr(>|t|)
+(Intercept)             0.006667447
+natnonIntroduced        0.713743384
+attachment.status2drift 0.732449317
 Type III Analysis of Variance Table with Satterthwaite's method
                      Sum Sq  Mean Sq NumDF   DenDF F value Pr(>F)
 natnon             0.042262 0.042262     1  38.811  0.1366 0.7137
