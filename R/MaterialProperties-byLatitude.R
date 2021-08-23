@@ -76,7 +76,7 @@ f1 <-  ggplot(data=tmp2, aes(x=lat,y=peak_force,ymin=peak_force-se,ymax=peak_for
   scale_shape_manual(values=c(21,19,17)) +
   geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
   theme_classic() +
-    ylab("peak breakage force N (mean)") +
+    ylab("Breakage Force (N)") +
     xlab("Latitude") +
   theme(
     legend.position = c(.2, .95),
@@ -128,6 +128,7 @@ dev.off()
 
 ### ### plot 5 - with wNA
 datatypes <- c("peak_force","slope_Mpa","maxstress","maxstrain","auc_modulus")
+y_labels <- c("Breaking Force (N)","Modulus (MPa)","Peak Stress","Peak Strain","Modulus (Mpa)")
 
 dat.out <- list()
 for (i in 1:5)
@@ -151,7 +152,7 @@ f1 <- ggplot(data=dat.out[[1]],aes(x=dat.out[[1]]$lat,y=dat.out[[1]][,2],ymin=da
   scale_shape_manual(values=c(21,15,19,17)) +
   geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
   theme_classic() +
-  ylab(colnames(dat.out[[1]])[2]) +
+  ylab(y_labels[1]) +
   xlab("Latitude") +
   theme(
     legend.position = c(.2, .95),
@@ -166,7 +167,7 @@ f2 <- ggplot(data=dat.out[[2]],aes(x=dat.out[[2]]$lat,y=dat.out[[2]][,2],ymin=da
   scale_shape_manual(values=c(21,15,19,17)) +
   geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
   theme_classic() +
-  ylab(colnames(dat.out[[2]])[2]) +
+  ylab(y_labels[2]) +
   xlab("Latitude")+
   theme(legend.position = "none") 
 
@@ -176,7 +177,7 @@ f3 <- ggplot(data=dat.out[[3]],aes(x=dat.out[[3]]$lat,y=dat.out[[3]][,2],ymin=da
   scale_shape_manual(values=c(21,15,19,17)) +
   geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
   theme_classic() +
-  ylab(colnames(dat.out[[3]])[2]) +
+  ylab(y_labels[3]) +
   xlab("Latitude") +
   theme(legend.position = "none") 
 
@@ -186,7 +187,7 @@ f4 <- ggplot(data=dat.out[[4]],aes(x=dat.out[[4]]$lat,y=dat.out[[4]][,2],ymin=da
   scale_shape_manual(values=c(21,15,19,17)) +
   geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
   theme_classic() +
-  ylab(colnames(dat.out[[4]])[2]) +
+  ylab(y_labels[4]) +
   xlab("Latitude") +
   theme(legend.position = "none") 
 
@@ -196,7 +197,7 @@ f5 <- ggplot(data=dat.out[[5]],aes(x=dat.out[[5]]$lat,y=dat.out[[5]][,2],ymin=da
   scale_shape_manual(values=c(21,15,19,17)) +
   geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
   theme_classic() +
-  ylab(colnames(dat.out[[5]])[2]) +
+  ylab(y_labels[5]) +
   xlab("Latitude") +
   theme(legend.position = "none") 
 

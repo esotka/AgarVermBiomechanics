@@ -1,7 +1,7 @@
 # AgarVermBiomechanics
 ## description  
 
-This dataset contains biomechanical and body size information for 2015-16 collections of Agarophyton vermiculophyllum (formerly Gracilaria vermilculophylla). Citation Murren et al. (in prep)
+This dataset contains biomechanical and body size information for 2015-16 collections of Agarophyton vermiculophyllum (formerly Gracilaria vermilculophylla). 
 
 ## data
 ### "architecture.csv"  

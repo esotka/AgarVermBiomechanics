@@ -185,7 +185,7 @@ tmp2$se <- (tmp2$sd)/sqrt(tmp2$n)
 f2 <- ggplot(tmp2,aes(y=slope_Mpa,x=natnon,fill=attach3,ymin=slope_Mpa-se,ymax=slope_Mpa+se)) +
   geom_boxplot() +
   geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) +scale_fill_manual(values=c("white","grey")) +
-  ylab("Slope") + xlab("") +
+  ylab("Modulus (MPa)") + xlab("") +
   guides(fill=FALSE) +
   theme_classic()
 
@@ -201,7 +201,7 @@ f3 <- ggplot(tmp2,aes(y=maxstress,x=natnon,fill=attach3,ymin=maxstress-se,ymax=m
   geom_boxplot() +
   geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) +scale_fill_manual(values=c("white","grey")) +
   scale_fill_manual(values=c("white","grey")) +
-  ylab("Max Stress") + xlab("") +
+  ylab("Peak Stress (MPa)") + xlab("") +
   guides(fill=FALSE) +
   theme_classic()
 
@@ -218,7 +218,7 @@ f4 <- ggplot(tmp2,aes(y=maxstrain,x=natnon,fill=attach3,ymin=maxstrain-se,ymax=m
   geom_boxplot(outlier.shape=NA) + 
   geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) +scale_fill_manual(values=c("white","grey")) +
   scale_fill_manual(values=c("white","grey")) +
-  ylab("Max Strain") + xlab("") +
+  ylab("Peak Strain") + xlab("") +
   guides(fill=FALSE) +
   theme_classic()
 #print(f4)
@@ -235,7 +235,7 @@ f5 <- ggplot(tmp2,aes(y=auc_modulus,x=natnon,fill=attach3,ymin=auc_modulus-se,ym
   geom_boxplot(outlier.shape=NA) + 
   geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) +scale_fill_manual(values=c("white","grey")) +
   scale_fill_manual(values=c("white","grey")) +
-  ylab("AUC") + xlab("") +
+  ylab("AUC (MJ/m3)") + xlab("") +
   guides(fill=FALSE) +
   theme_classic()
 png('output/MaterialProperties-drift.vs.attached.png',width=5,height=9,units="in",res=700)
@@ -277,7 +277,7 @@ f2 <- ggplot(tmp2,aes(y=slope_Mpa,x=Continent,fill=attach3,ymax=slope_Mpa+se,ymi
   geom_boxplot() +
   geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) + 
   scale_fill_manual(values=c("white","grey")) +
-  ylab("Slope") + xlab("") +
+  ylab("Modulus (MPa)") + xlab("") +
   guides(fill=FALSE) +
   theme_classic() + theme(legend.position = "none") +
   annotate("text", x=c(.8,1.2), y=0, label= table(tmp2$Continent,tmp2$attach3)[1,]) +
@@ -296,7 +296,7 @@ f3 <- ggplot(tmp2,aes(y=maxstress,x=Continent,fill=attach3,ymax=maxstress+se,ymi
   geom_boxplot() +
   geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) + 
   scale_fill_manual(values=c("white","grey")) +
-  ylab("Max Stress") + xlab("") +
+  ylab("Peak Stress (MPa)") + xlab("") +
   guides(fill=FALSE) +
   theme_classic() + theme(legend.position = "none") +
   annotate("text", x=c(.8,1.2), y=0, label= table(tmp2$Continent,tmp2$attach3)[1,]) +
@@ -316,7 +316,7 @@ f4 <- ggplot(tmp2,aes(y=maxstrain,x=Continent,fill=attach3,ymax=maxstrain+se,ymi
   geom_boxplot() +
   geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) + 
   scale_fill_manual(values=c("white","grey")) +
-  ylab("Max Strain") + xlab("") +
+  ylab("Peak Strain") + xlab("") +
   guides(fill=FALSE) +
   theme_classic() + theme(legend.position = "none") +
   annotate("text", x=c(.8,1.2), y=0, label= table(tmp2$Continent,tmp2$attach3)[1,]) +
@@ -335,7 +335,7 @@ f5 <- ggplot(tmp2,aes(y=auc_modulus,x=Continent,fill=attach3,ymax=auc_modulus+se
   geom_boxplot() +
   geom_point(pch = 21, position = position_jitterdodge(jitter.width=0.1)) + 
   scale_fill_manual(values=c("white","grey")) +
-  ylab("AUC") + xlab("") +
+  ylab("AUC (MJ/m3)") + xlab("") +
   guides(fill=FALSE) +
   theme_classic() + theme(legend.position = "none") +
   annotate("text", x=c(.8,1.2), y=0, label= table(tmp2$Continent,tmp2$attach3)[1,]) +

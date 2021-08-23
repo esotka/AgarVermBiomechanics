@@ -60,7 +60,7 @@ print(summary(m)$coefficients); print(anova(m))
 f <- ggplot(br,aes(y=maxstress,x=natnon,fill=MudRock)) +
   geom_boxplot() +
   scale_fill_manual(values=c("white","grey")) +
-  ylab("Max stress") + xlab("") +
+  ylab("Peak Stress (MPa)") + xlab("") +
   theme_classic()
 print(f)
 
@@ -74,7 +74,7 @@ print(summary(m)$coefficients); print(anova(m))
 f <- ggplot(br,aes(y=maxstrain,x=natnon,fill=MudRock)) +
   geom_boxplot() +
   scale_fill_manual(values=c("white","grey")) +
-  ylab("Max strain") + xlab("") +
+  ylab("Peak Strain") + xlab("") +
   theme_classic()
 print(f)
 
@@ -174,7 +174,7 @@ tmp2$se <- (tmp2$sd)/sqrt(tmp2$n)
 f2 <- ggplot(tmp2,aes(y=slope_Mpa,x=natnon,fill=MudRock,ymin=slope_Mpa-se,ymax=slope_Mpa+se)) +
   geom_boxplot() +
   geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) +  scale_fill_manual(values=c("white","grey")) +
-  ylab("Slope") + xlab("") +
+  ylab("Modulus (MPa)") + xlab("") +
   guides(fill=FALSE) +
   theme_classic()
 
@@ -223,7 +223,7 @@ f5 <- ggplot(tmp2,aes(y=auc_modulus,x=natnon,fill=MudRock,ymin=auc_modulus-se,ym
   geom_boxplot(outlier.shape=NA) + 
   geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) +  scale_fill_manual(values=c("white","grey")) +
   scale_fill_manual(values=c("white","grey")) +
-  ylab("AUC") + xlab("") +
+  ylab("AUC (MJ/m3)") + xlab("") +
   guides(fill=FALSE) +
   theme_classic()
 
@@ -276,7 +276,7 @@ f2 <- ggplot(tmp2,aes(y=slope_Mpa,x=Continent,fill=MudRock,ymax=slope_Mpa+se,ymi
   geom_boxplot() +
   geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) + 
   scale_fill_manual(values=c("white","grey")) +
-  ylab("Slope") + xlab("") +
+  ylab("Modulus (MPa)") + xlab("") +
   guides(fill=FALSE) +
   theme_classic() + theme(legend.position = "none") +
   annotate("text", x=c(.8,1.2), y=0, label= table(tmp2$Continent,tmp2$MudRock)[1,]) +
@@ -295,7 +295,7 @@ f3 <- ggplot(tmp2,aes(y=maxstress,x=Continent,fill=MudRock,ymax=maxstress+se,ymi
   geom_boxplot() +
   geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) + 
   scale_fill_manual(values=c("white","grey")) +
-  ylab("Max stress") + xlab("") +
+  ylab("Peak Stress (MPa)") + xlab("") +
   guides(fill=FALSE) +
   theme_classic() + theme(legend.position = "none") +
   annotate("text", x=c(.8,1.2), y=0, label= table(tmp2$Continent,tmp2$MudRock)[1,]) +
@@ -315,7 +315,7 @@ f4 <- ggplot(tmp2,aes(y=maxstrain,x=Continent,fill=MudRock,ymax=maxstrain+se,ymi
   geom_boxplot() +
   geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) + 
   scale_fill_manual(values=c("white","grey")) +
-  ylab("Max strain") + xlab("") +
+  ylab("Peak Strain") + xlab("") +
   guides(fill=FALSE) +
   theme_classic() + theme(legend.position = "none") +
   annotate("text", x=c(.8,1.2), y=0, label= table(tmp2$Continent,tmp2$MudRock)[1,]) +
@@ -335,7 +335,7 @@ f5 <- ggplot(tmp2,aes(y=auc_modulus,x=Continent,fill=MudRock,ymax=auc_modulus+se
   geom_boxplot() +
   geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) + 
   scale_fill_manual(values=c("white","grey")) +
-  ylab("AUC") + xlab("") +
+  ylab("AUC (MJ/m3)") + xlab("") +
   guides(fill=FALSE) +
   theme_classic() + theme(legend.position = "none") +
   annotate("text", x=c(.8,1.2), y=0, label= table(tmp2$Continent,tmp2$MudRock)[1,]) +
