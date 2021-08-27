@@ -11,16 +11,19 @@ tmp <- data.frame(long=c("Japan","NorthAmericaWest","NorthAmericaEast","Europe")
 ########################
 arch <- read.csv('data/architecture.csv')
 arch$site <- tolower(substr(arch$Individual_ID,1,3))
+arch$site2 <- meta$site_code_for_ms[match(arch$site,meta$field_site_code_2015)]
 arch$Continent <- meta$Continent[match(arch$site,meta$field_site_code_2015)]
 arch$Continent <- factor(arch$Continent)
 arch$Continent <- factor(arch$Continent,levels=levels(arch$Continent)[c(2,4,3,1)])
 arch <- arch[arch$Surfacearea=="Y",]
 print("architecture data")
 print(table(arch$Continent,arch$StacyLifehistory))
+print(cbind(table(arch$site2,arch$StacyLifehistory),table(arch$site2)))
 arch$MudRock <- meta$SiteA[match(arch$site,meta$field_site_code_2015)]
 arch$MudRock <- factor(arch$MudRock,levels=c("rockyshore","mudflat"))
 print(table(arch$Continent,arch$MudRock))
 arch$Continent.short <- tmp$short[match(arch$Continent,tmp$long)]
+arch$Continent.short <- as.factor(arch$Continent.short)
 arch$Continent.short <- factor(arch$Continent.short,levels=c("Japan","wNA","eNA","Europe"))
 
 arch$attachment.status2 <- c()
@@ -49,7 +52,9 @@ dev.off()
 #####################
 br <- read.csv('data/breakage.csv')
 br$site <- tolower(substr(br$sample_id,1,3))
+br$site2 <- meta$site_code_for_ms[match(br$site,meta$field_site_code_2015)]
 br$Continent <- meta$Continent[match(br$site,meta$field_site_code_2015)]
+br$Continent <- as.factor(br$Continent)
 br$Continent <- factor(br$Continent,levels=levels(br$Continent)[c(2,4,3,1)])
 ### criteria for drift vs attached
 br <- br[!br$attach2=="",]
@@ -60,6 +65,7 @@ br$attach3 <- factor(br$attach3)
 print("breakage")
 print(table(br$Continent,br$Life_History2))
 print(table(br$Continent,br$attach3))
+print(cbind(table(br$site2,br$Life_History2),table(br$site2)))
 
 br$Continent.short <- tmp$short[match(br$Continent,tmp$long)]
 br$Continent.short <- factor(br$Continent.short,levels=c("Japan","wNA","eNA","Europe"))
