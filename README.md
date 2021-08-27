@@ -51,3 +51,16 @@ propdrift = proportion of collected thalli that were drifting
 Collection.date = collection date  
 Collection.waterTemp = collection water temperature  
 
+### "biomass.csv"
+Site  
+sampleID  
+pop  
+thallus=the number of thalli  
+wetmass in g
+drymass in g
+wmtodm= ratio of wetmass to drymass  
+water in % wetmass
+afdm in g
+organiccontent in % of wetmass
+percentafdm % of drymass  
+
