@@ -76,7 +76,7 @@ f1 <-  ggplot(data=tmp2, aes(x=lat,y=peak_force,ymin=peak_force-se,ymax=peak_for
   scale_shape_manual(values=c(21,19,17)) +
   geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
   theme_classic() +
-    ylab("Breakage Force (N)") +
+    ylab("Breaking Force (N)") +
     xlab("Latitude") +
   theme(
     legend.position = c(.2, .95),
