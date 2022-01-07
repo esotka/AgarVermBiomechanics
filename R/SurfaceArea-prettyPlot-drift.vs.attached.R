@@ -55,7 +55,7 @@ f1 <- ggplot(tmp3,aes(y=sumprojarea,x=natnon,fill=attachment.status2,ymax=sumpro
   geom_boxplot() +
   geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) +
   scale_fill_manual(values=c("white","grey")) +
-  ylab("Projected Area") + xlab("") +
+  ylab("Projected Area (cm2)") + xlab("") +
   guides(fill=FALSE) +
   theme_classic()
 
@@ -76,7 +76,7 @@ f2 <- ggplot(tmp3,aes(y=sumprojarea,x=natnon,fill=attachment.status2,ymax=sumpro
   geom_boxplot() +
   geom_pointrange(pch = 21, cex=0.3, position = position_jitterdodge(jitter.width=0.5)) +
   scale_fill_manual(values=c("white","grey")) +
-  ylab("Projected Area") + xlab("") +
+  ylab("Projected Area (cm2)") + xlab("") +
   guides(fill=FALSE) +
   theme_classic()
 

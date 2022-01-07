@@ -99,7 +99,7 @@ f2 <-  ggplot(data=tmp2, aes(x=lat,y=maxstrain,ymin=maxstrain-se,ymax=maxstrain+
   scale_shape_manual(values=c(21,19,17)) +
   geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
   theme_classic() +
-  ylab("Max Strain") +
+  ylab("Peak Strain") +
   xlab("Latitude") +
   theme(legend.position = "none") 
 
@@ -118,7 +118,7 @@ f3 <-  ggplot(data=tmp2, aes(x=lat,y=slope_Mpa,ymin=slope_Mpa-se,ymax=slope_Mpa+
   scale_shape_manual(values=c(21,19,17)) +
   geom_smooth(method=lm,aes(linetype=Continent,fill=Continent),size=.5,color="black") +
   theme_classic() +
-  ylab("Slope") +
+  ylab("Modulus (MPa)") +
   xlab("Latitude") +
   theme(legend.position = "none") 
 
