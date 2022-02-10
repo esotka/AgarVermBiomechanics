@@ -43,8 +43,8 @@ print(summary(m)$call)
 print(summary(m)$coefficients); print(anova(m))
 
 tmp2 <- tmp[tmp$Surfacearea=="Y"& tmp$StacyLifehistory=="Tetrasporophyte",]
-tmp2 <- melt(tmp2[,c("site","natnon","attachment.status2","sumprojarea")])
-print("all thalli")
+#tmp2 <- melt(tmp2[,c("site","natnon","attachment.status2","sumprojarea")])
+print("tetrasporphytes")
 print(table(tmp2$natnon,tmp2$attachment.status2))
 m <- lmer(log(tmp2$sumprojarea)~natnon+attachment.status2+(1|site), data=tmp2) 
 print(summary(m)$call)
